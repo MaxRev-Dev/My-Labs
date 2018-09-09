@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SearchOfExit.MazeControl" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAgAAAAACAAgACAAAAAAAAAEAAAQAAAgA=</HashCode>
+      <FileName>Controls\MazeControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SearchOfExit.CellControl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAAAAAECAAAAAAAACAIAACAAAAAAAAAAAAQAAAIAA=</HashCode>
+      <FileName>Controls\CellControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchOfExit.Code.Lead">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="SearchOfExit.Code.Lead.MazeManager" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\Lead.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Code\Lead.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Current" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SearchOfExit.Code.Maze">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAQIAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Code\Maze.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchOfExit.Menu">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAQAAAACAQAACAAIEAAUAAAUAQAAKAGA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

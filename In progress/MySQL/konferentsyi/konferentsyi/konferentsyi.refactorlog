@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="72cfd06e-97c4-4989-9540-004ccbfe0907" ChangeDateTime="09/24/2018 10:25:04">
+    <Property Name="ElementName" Value="[dbo].[kafedry].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[kafedry]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_kafedry" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="48ec3720-2a5c-41d1-bdf8-c23a50277e2d" ChangeDateTime="09/24/2018 10:27:01">
+    <Property Name="ElementName" Value="[dbo].[spivrobitnyky].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[spivrobitnyky]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_spivrobitnyky" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e62c6135-45a1-4b05-86f2-707345b5e1b8" ChangeDateTime="09/24/2018 10:33:17">
+    <Property Name="ElementName" Value="[dbo].[konferentsiyi].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[konferentsiyi]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_konferentsiyi" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="31919892-67b7-431f-9e36-a95b0a42ae6d" ChangeDateTime="09/24/2018 10:38:38">
+    <Property Name="ElementName" Value="[dbo].[mistsya_prozhyvannya].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[mistsya_prozhyvannya]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_mistsya_prozhyvannya" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="352f4a53-f03b-4b69-bf70-c568f37337ab" ChangeDateTime="09/24/2018 10:40:38">
+    <Property Name="ElementName" Value="[dbo].[prozhyvannya_uchasnykiv].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[prozhyvannya_uchasnykiv]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_prozhyvannya_uchasnykiv" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6ad1a54e-92f1-4e80-85b7-59a65d94cc11" ChangeDateTime="09/24/2018 10:42:13">
+    <Property Name="ElementName" Value="[dbo].[sektsyi].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[sektsyi]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_sektsiyi" />
+  </Operation>
+</Operations>

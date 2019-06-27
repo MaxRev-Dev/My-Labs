@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L33_calc", "L33_calc\L33_calc.pyproj", "{CA9733FA-F2E7-42A6-9897-1BB20DAB8AC0}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L32_figure", "..\L32_figure\L32_figure.pyproj", "{C35FD65A-2AD8-499D-BACD-FB9064D5F20D}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L3", "..\L3\L3\L3.pyproj", "{FD45AA86-187C-4716-9CBC-71CDCE603784}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA9733FA-F2E7-42A6-9897-1BB20DAB8AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9733FA-F2E7-42A6-9897-1BB20DAB8AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35FD65A-2AD8-499D-BACD-FB9064D5F20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35FD65A-2AD8-499D-BACD-FB9064D5F20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD45AA86-187C-4716-9CBC-71CDCE603784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD45AA86-187C-4716-9CBC-71CDCE603784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AE6368F-F9AA-4D2C-82AD-7D52E963D94F}
+	EndGlobalSection
+EndGlobal

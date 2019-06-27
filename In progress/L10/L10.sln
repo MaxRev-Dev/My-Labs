@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L10", "L10\L10.pyproj", "{D44D65F3-FD9C-4DF3-BB28-66D9DCFB43B7}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L10_2", "L10_2\L10_2.pyproj", "{EB066407-61F8-44C1-AACA-1F38876F1958}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "L10_3", "L10_3\L10_3.pyproj", "{9251A761-D1AB-426D-8743-2535C26DCCBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D44D65F3-FD9C-4DF3-BB28-66D9DCFB43B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44D65F3-FD9C-4DF3-BB28-66D9DCFB43B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB066407-61F8-44C1-AACA-1F38876F1958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB066407-61F8-44C1-AACA-1F38876F1958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9251A761-D1AB-426D-8743-2535C26DCCBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9251A761-D1AB-426D-8743-2535C26DCCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22C3C653-39DD-4902-BAC8-7A768543E9E3}
+	EndGlobalSection
+EndGlobal

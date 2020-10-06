@@ -1,4 +1,4 @@
-п»ї#include "stdafx.h"
+﻿#include "stdafx.h"
 #include <iostream>
 #include <sstream>
 #include <locale> 

@@ -65,14 +65,14 @@ bool contains(const vector<int> v, int s) {
 	return false;
 }
 void header() {
-	cout << "|" << "РљРѕРґ С„Р°РєСѓР»СЊС‚РµС‚Сѓ"
-		<< "|" << "РљРѕРґ СЃРїРµС†С–Р°Р»СЊРЅРѕСЃС‚С–"
-		<< "|" << "РљСѓСЂСЃ"
-		<< "|" << "Р“СЂСѓРїР°"
-		<< "|" << "РљРѕРґ РґРёСЃС†РёРїР»С–РЅРё"
-		<< "|" << "РџСЂС–Р·РІРёС‰Рµ"
-		<< "|" << "РќРѕРј. Р·/Рє"
-		<< "|" << "РћС†С–РЅРєР°" << "|" << endl;
+	cout << "|" << "��� ����������"
+		<< "|" << "��� ������������"
+		<< "|" << "����"
+		<< "|" << "�����"
+		<< "|" << "��� ���������"
+		<< "|" << "�������"
+		<< "|" << "���. �/�"
+		<< "|" << "������" << "|" << endl;
 }
 void PrintAll(const vector<Item> v) {
 	cout << endl;
@@ -92,13 +92,13 @@ void PrintAll(const vector<Item> v) {
 }
 
 
-//Р—Р°РґР°С‡Р° 1
+//������ 1
 void Calc(vector<Item> v) {
 	vector<int> made;
 	vector<Item> sum, res = v;
 	made.push_back(v.back().fcode);
-	cout << "|\t\t   |   РџРёС‚РѕРјР° РІР°РіР°   |" << endl;
-	cout << "| Р¤Р°РєСѓР»СЊС‚РµС‚\t" << "   |  2   3   4   5  |" << endl;
+	cout << "|\t\t   |   ������ ����   |" << endl;
+	cout << "| ���������\t" << "   |  2   3   4   5  |" << endl;
 	for (size_t i = 0; i < v.size(); i++) {
 		int lsum = 0, cnt = 0, resf;
 		int *wmark = new int[6];
@@ -113,14 +113,14 @@ void Calc(vector<Item> v) {
 				++wmark[v[i].mark];
 			}
 		}
-		cout << "| Р¤Р°РєСѓР»СЊС‚РµС‚: " << setw(5) << made.back();
+		cout << "| ���������: " << setw(5) << made.back();
 		for (int i = 2; i <= 5; i++) {
 			if (wmark[i] != 0) {
 				cout << " | " << setw(1) << setprecision(2) << (1.0*wmark[i] / cnt * 100);
 			}
 			else cout << " | " << 0;
 		}
-		cout << " | РЎРµСЂРµРґРЅС–Р№ Р±Р°Р»: " << lsum / cnt << endl;
+		cout << " | �������� ���: " << lsum / cnt << endl;
 
 		resf = v.back().fcode;
 		while (contains(made, resf)) {
@@ -136,51 +136,51 @@ void Calc(vector<Item> v) {
 	}
 }
 
-//Р—Р°РґР°С‡Р° 2
+//������ 2
 void RemoveItems(vector<Item> *v) {
 	while (true) {
 		PrintAll(*v);
-		cout << endl << "РќРѕРјРµСЂ Р·Р°РїРёСЃСѓ РґР»СЏ РІРёРґР°Р»РµРЅРЅСЏ (-1 РІС–РґРјС–РЅР°): " << endl;
+		cout << endl << "����� ������ ��� ��������� (-1 �����): " << endl;
 		int x; cin >> x; cin.get();
 		if (x == -1) break;
 		v->erase(v->begin() + x - 1);
-		cout << endl << "Р’РёРґР°Р»РёС‚Рё С‰Рµ Р·Р°РїРёСЃ [1/0]: ";
+		cout << endl << "�������� �� ����� [1/0]: ";
 		int fg;  cin >> fg;
 		if (fg != 1) break;
 	}
 }
 
-//Р—Р°РґР°С‡Р° 3
+//������ 3
 vector<Item>* GetItems() {
 	vector<Item> *v = new vector<Item>();
 	while (true)
 	{
 		Item it;
-		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ С„Р°РєСѓР»СЊС‚РµС‚Сѓ: ";
+		cout << "������ ��� ����������: ";
 		cin >> it.fcode; cin.get();
-		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ СЃРїРµС†С–Р°Р»СЊРЅРѕСЃС‚С–: ";
+		cout << "������ ��� ������������: ";
 		cin >> it.scode; cin.get();
-		cout << "Р’РІРµРґС–С‚СЊ РєСѓСЂСЃ: ";
+		cout << "������ ����: ";
 		cin >> it.course;
-		cout << "Р’РІРµРґС–С‚СЊ РіСЂСѓРїСѓ: ";
+		cout << "������ �����: ";
 		cin >> it.group;
-		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ РґРёСЃС†РёРїР»С–РЅРё: ";
+		cout << "������ ��� ���������: ";
 		cin >> it.dpcode; cin.get();
-		cout << "Р’РІРµРґС–С‚СЊ РїСЂС–Р·РІРёС‰Рµ СЃС‚СѓРґРµРЅС‚Р°: ";
+		cout << "������ ������� ��������: ";
 		cin >> it.nick;
-		cout << "Р’РІРµРґС–С‚СЊ РЅРѕРјРµСЂ Р·Р°Р»С–РєРѕРІРѕС— РєРЅРёР¶РєРё: ";
+		cout << "������ ����� ������� ������: ";
 		cin >> it.gradebook_id; cin.get();
-		cout << "Р’РІРµРґС–С‚СЊ РѕС†С–РЅРєСѓ: ";
+		cout << "������ ������: ";
 		cin >> it.mark; cin.get();
 		v->push_back(it);
-		cout << endl << "Р”РѕРґР°С‚Рё С‰Рµ Р·Р°РїРёСЃ [1/0]: ";
+		cout << endl << "������ �� ����� [1/0]: ";
 		int fg;  cin >> fg;
 		if (fg != 1) break;
 	} return v;
 }
 void WriteItems(string file, const vector<Item> v) {
 	ofstream of(file, ios::trunc);
-	cout << endl << "Р’С–РґРєСЂРёРІР°С”РјРѕ С„Р°Р№Р» РґР»СЏ Р·Р°РїРёСЃСѓ...";
+	cout << endl << "³�������� ���� ��� ������...";
 	for (size_t i = 0; i < v.size(); i++) {
 		auto  p = v[i];
 		of <<
@@ -193,11 +193,11 @@ void WriteItems(string file, const vector<Item> v) {
 			p.gradebook_id << "|" <<
 			p.mark << endl;
 	}
-	cout << endl << "Р¤Р°Р№Р» СѓСЃРїС–С€РЅРѕ Р·Р±РµСЂРµР¶РµРЅРѕ! " << endl;
+	cout << endl << "���� ������ ���������! " << endl;
 	of.close();
 }
 
-//Р—Р°РґР°С‡Р° 4
+//������ 4
 void CorrectPrint(const Item p) {
 	cout <<
 		"\n| [1]" << setw(5) << p.fcode << setw(5) << "| [2]" << setw(5) <<
@@ -213,67 +213,67 @@ void CorrectItems(vector<Item> *v) {
 	while (true)
 	{
 		PrintAll(*v);
-		cout << "Р’РІРµРґС–С‚СЊ РЅРѕРјРµСЂ Р·Р°РїРёСЃСѓ РґР»СЏ РєРѕСЂРёРіСѓРІР°РЅРЅСЏ (-1 РІС–РґРјС–РЅР°): ";
+		cout << "������ ����� ������ ��� ����������� (-1 �����): ";
 		int x, y;  cin >> x; cin.get();
 		if (x == -1) break;
 		Item tmp = v->at(x - 1);
 		while (true)
 		{
-			cout << "Р’РІРµРґС–С‚СЊ РЅРѕРјРµСЂ РїРѕР»СЏ РґР»СЏ РєРѕСЂРёРіСѓРІР°РЅРЅСЏ (-1 РІС–РґРјС–РЅР°): ";
+			cout << "������ ����� ���� ��� ����������� (-1 �����): ";
 			CorrectPrint(tmp);
 			cin >> y; cin.get();
 			if (x == -1) break;
-			cout << ">> Р РµРґР°РіСѓС”РјРѕ ";
+			cout << ">> �������� ";
 			switch (y)
 			{
 			case 1: {
-				cout << "РєРѕРґ С„Р°РєСѓР»СЊС‚РµС‚Сѓ: "; cin >> tmp.fcode; cin.get();
+				cout << "��� ����������: "; cin >> tmp.fcode; cin.get();
 				break;
 			}
 			case 2: {
-				cout << "РєРѕРґ СЃРїРµС†С–Р°Р»СЊРЅРѕСЃС‚С–: "; cin >> tmp.scode; cin.get();
+				cout << "��� ������������: "; cin >> tmp.scode; cin.get();
 				break;
 			}
 			case 3: {
-				cout << "РєСѓСЂСЃ: "; cin >> tmp.course;
+				cout << "����: "; cin >> tmp.course;
 				break;
 			}
 			case 4: {
-				cout << "РіСЂСѓРїСѓ: "; cin >> tmp.group;
+				cout << "�����: "; cin >> tmp.group;
 				break;
 			}
 			case 5: {
-				cout << "РєРѕРґ РґРёСЃС†РёРїР»С–РЅРё: "; cin >> tmp.dpcode; cin.get();
+				cout << "��� ���������: "; cin >> tmp.dpcode; cin.get();
 				break;
 			}
 			case 6: {
-				cout << "РїСЂС–Р·РІРёС‰Рµ СЃС‚СѓРґРµРЅС‚Р°: "; cin >> tmp.nick;
+				cout << "������� ��������: "; cin >> tmp.nick;
 				break;
 			}
 			case 7: {
-				cout << "РЅРѕРјРµСЂ Р·Р°Р».РєРЅ.: "; cin >> tmp.gradebook_id; cin.get();
+				cout << "����� ���.��.: "; cin >> tmp.gradebook_id; cin.get();
 				break;
 			}
 			case 8: {
-				cout << "РѕС†С–РЅРєСѓ: "; cin >> tmp.mark; cin.get();
+				cout << "������: "; cin >> tmp.mark; cin.get();
 				break;
 			}
 			default:
 				break;
 			}
 			CorrectPrint(tmp);
-			cout << endl << "РЎРєРѕСЂРµРіСѓРІР°С‚Рё С‰Рµ РїРѕР»Рµ [1/0]: ";
+			cout << endl << "����������� �� ���� [1/0]: ";
 			int fg;  cin >> fg;	if (fg != 1) break;
 
 		}
 
 		v->at(x - 1) = tmp;
-		cout << endl << "РЎРєРѕСЂРµРіСѓРІР°С‚Рё С‰Рµ Р·Р°РїРёСЃ [1/0]: ";
+		cout << endl << "����������� �� ����� [1/0]: ";
 		int fg;  cin >> fg;	if (fg != 1) break;
 	}
 }
 
-//Р—Р°РґР°С‡Р° 5
+//������ 5
 void Min(int**m,int sizeN) {
 	int index;
 	for (int i = 0; i < sizeN; i++) {
@@ -311,26 +311,26 @@ void TestMaxrix() {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//Р·Р°РґР°С‡Р° 1
+	//������ 1
 	auto f1 = ReadFile("./data.txt");
 	Calc(*f1);
 
-	//Р·Р°РґР°С‡Р° 2
+	//������ 2
 	auto f2 = ReadFile("./data.txt");
 	RemoveItems(f2);
 	WriteItems("./data.txt", *f2);
 
-	//Р·Р°РґР°С‡Р° 3
+	//������ 3
 	auto f3 = GetItems();
 	PrintAll(*f3);
 	WriteItems("./data.txt", *f3);
 
-	//Р·Р°РґР°С‡Р° 4
+	//������ 4
 	auto f4 = ReadFile("./data.txt");
 	CorrectItems(f4);
 	WriteItems("./data.txt", *f4);
 
-	//Р·Р°РґР°С‡Р° 5
+	//������ 5
 	_getch();
 	return 0;
 }

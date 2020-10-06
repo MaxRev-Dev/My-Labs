@@ -7,7 +7,7 @@
 using namespace std;
 
 
-/* РњРµС‚РѕРґ РљСЂР°РјРµСЂР°*/
+/* ����� �������*/
 double* SolveCramer(SquareMatrix A, double det_A, double *b) {
 	double *ret = new double[A.size];
 	for (int i = 0; i < A.size; ++i) {
@@ -21,16 +21,16 @@ double* SolveCramer(SquareMatrix A, double det_A, double *b) {
 	}
 	return ret;
 }
-/* РњРµС‚РѕРґ Р—РµР№РґРµР»СЏ */
+/* ����� ������� */
 double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 	cout << "Solving with Seidel method:\n\nNormalizing matrix..\n";
 	SquareMatrix tmp = CopyMatrix(A);
 	double *b1 = new double[A.size];
-	for (int i = 0; i < A.size; i++) {/*Р—РІРѕРґРёРјРѕ РґРѕ РЅРѕСЂРјР°Р»С–Р·РѕРІР°РЅРѕРіРѕ РІРёРіР»СЏРґСѓ*/
+	for (int i = 0; i < A.size; i++) {/*������� �� �������������� �������*/
 		for (int j = 0; j < A.size; j++) {
 			if (i == j)
 				tmp.elems[i][j] = (10 - A.elems[i][j]) / 10;
-			else /* РґС–Р°РіРѕРЅР°Р»СЊ - РіРѕР»РѕРІРЅР° */
+			else /* �������� - ������� */
 				tmp.elems[i][j] = -(A.elems[i][j] / 10);
 			cout << tmp.elems[i][j] << " ";
 		}
@@ -45,13 +45,13 @@ double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 	while (true)
 	{
 		if (eps < epsilon || k > 1000) break;
-		//РЅСѓ С‚СѓС‚ С‚РёРїСѓ С„РѕСЂРјСѓР»Р°
+		//�� ��� ���� �������
 		//xk(n+1)=A(k1)*x1(n)+A(k2)*x2(n)+A(k3)*x3(n)+B(k)
 		for (int i = 0; i < A.size; i++) {
 			double S = 0;
 			for (int j = 0; j < A.size; j++) {
 				if (j < i) S += tmp.elems[i][j] * X0[j];
-				else /*СЏРєС‰Рѕ РµР»РµРјРµРЅС‚ РїС–Рґ РґС–Р°РіРѕРЅР°Р»Р»СЋ С‚Рѕ Р±РµСЂРµРјРѕ С…0*/
+				else /*���� ������� �� ��������� �� ������ �0*/
 					S += tmp.elems[i][j] * X[j];
 			} S += b1[i];
 			X[i] = S;
@@ -60,8 +60,8 @@ double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 		cout << "Iteration: " << k << "   ";
 		for (int i = 0; i < A.size; i++) {
 			if (fabs(X[i] - X0[i]) < eps) {
-				eps = fabs(X[i] - X0[i]); /*РїРµСЂРµРІС–СЂРєР° РЅР° Р·Р±С–Р¶РЅС–СЃС‚СЊ
-										  abs( x РїРѕРїРµСЂРµРґРЅС–Р№ - x С‚РµРїРµСЂС–С€РЅС–Р№)*/
+				eps = fabs(X[i] - X0[i]); /*�������� �� ��������
+										  abs( x ���������� - x ���������)*/
 			}
 			cout << X[i] << " ";
 			X0[i] = X[i];
@@ -70,17 +70,17 @@ double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 	}cout << endl;
 	return X;
 }
-/* РњРµС‚РѕРґ Р“Р°СѓСЃР°*/
+/* ����� �����*/
 double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 {
 	double *x, max, **a = A.elems;
 	int k, index, n = A.size;
-	const double eps = epsilon;  // С‚РѕС‡РЅС–СЃС‚СЊ
+	const double eps = epsilon;  // ��������
 	x = new double[n];
 	k = 0;
 	while (k < n)
 	{
-		// РџРѕС€СѓРє СЂСЏРґРєР° Р· РјР°РєСЃРёРјР°Р»СЊРЅРёРј a[i][k]
+		// ����� ����� � ������������ a[i][k]
 		max = abs(a[k][k]);
 		index = k;
 		for (int i = k + 1; i < n; i++)
@@ -89,12 +89,12 @@ double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 				max = abs(a[i][k]);
 				index = i;
 			}
-		// РџРµСЂРµСЃС‚Р°РЅРѕРІРєР° СЂСЏРґРєС–РІ
+		// ������������ �����
 		if (max < eps)
 		{
-			//РЅРµРјР°С” РЅСѓР»СЋРІРёС… РґС–Р°РіРѕРЅР°Р»СЊРЅРёС… РµР»РµРјРµРЅС‚С–РІ
-			cout << "Р РѕР·РІ'СЏР·РѕРє РЅРµРјРѕР¶Р»РёРІРёР№ С‡РµСЂРµР· РЅРµ РЅСѓР»СЊРѕРІРёР№ СЃС‚РѕРІС‡РёРє ";
-			cout << index << " РјР°С‚СЂРёС†С– A" << endl;
+			//���� ������� ����������� ��������
+			cout << "����'���� ���������� ����� �� �������� ������� ";
+			cout << index << " ������� A" << endl;
 			return 0;
 		}
 		for (int j = 0; j < n; j++)
@@ -106,22 +106,22 @@ double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 		double temp = y[k];
 		y[k] = y[index];
 		y[index] = temp;
-		// РќРѕСЂРјР°Р»С–Р·Р°С†С–СЏ СЂС–РІРЅСЏРЅСЊ
+		// ����������� ������
 		for (int i = k; i < n; i++)
 		{
 			double temp = a[i][k];
-			if (abs(temp) < eps) continue; // С†Рµ РЅСѓР»СЊРІРёР№ С‚РѕРјСѓ РїСЂРѕРїСѓСЃРєР°С”РјРѕ
+			if (abs(temp) < eps) continue; // �� ������� ���� ����������
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] / temp;
 			y[i] = y[i] / temp;
-			if (i == k)  continue; // С†Рµ С‚Р°РєРµ Р¶ СЏРє С– СЂР°С…СѓС”РјРѕ Р·Р°СЂР°Р· 
+			if (i == k)  continue; // �� ���� � �� � ������ ����� 
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] - a[k][j];
 			y[i] = y[i] - y[k];
 		}
 		k++;
 	}
-	// Р—РІРѕСЂРѕС‚РЅС–Р№ С…С–Рґ
+	// ��������� ���
 	for (k = n - 1; k >= 0; k--)
 	{
 		x[k] = y[k];

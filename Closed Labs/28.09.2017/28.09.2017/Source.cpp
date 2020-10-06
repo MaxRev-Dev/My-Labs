@@ -71,12 +71,12 @@ void Contacts<Type>::Print(int i)
 {
 	auto f = this->obj->at(i);
 	cout << "\n\nContact at [0]: ";
-	cout <<  "\n²ì'ÿ: " << f->Name << " " << "\nÒåëåôîí: " ;
+	cout <<  "\nÐ†Ð¼'Ñ: " << f->Name << " " << "\nÐ¢ÐµÐ»ÐµÑ„Ð¾Ð½: " ;
 	cout <<"+"<< to_string(f->Tel) << " ";
-	cout << "\nÑòàòü: " << (f->isMan ? "Man" : "Woman") << " ";
-	cout << "\nÀäðåñà: " << f->Address << " ";
-	cout << "\nÏîøò.³íäåêñ: " << f->PostArea << " ";
-	cout << "\nÊîìïàí³ÿ: " << f->Company << " "<<endl<<endl;
+	cout << "\nÐ¡Ñ‚Ð°Ñ‚ÑŒ: " << (f->isMan ? "Man" : "Woman") << " ";
+	cout << "\nÐÐ´Ñ€ÐµÑÐ°: " << f->Address << " ";
+	cout << "\nÐŸÐ¾ÑˆÑ‚.Ñ–Ð½Ð´ÐµÐºÑ: " << f->PostArea << " ";
+	cout << "\nÐšÐ¾Ð¼Ð¿Ð°Ð½Ñ–Ñ: " << f->Company << " "<<endl<<endl;
 }
 template<typename Type>
 void Contacts<Type>::PrintAll()
@@ -85,12 +85,12 @@ void Contacts<Type>::PrintAll()
 	for (auto u = 0; u < this->obj->size();u++) {
 		auto f = this->obj->at(u);
 		cout << "\n\nContact at ["<<u<<"]: ";
-		cout << "\n²ì'ÿ: " << f->Name << " " << "\nÒåëåôîí: ";
+		cout << "\nÐ†Ð¼'Ñ: " << f->Name << " " << "\nÐ¢ÐµÐ»ÐµÑ„Ð¾Ð½: ";
 		cout << "+" << to_string(f->Tel) << " ";
-		cout << "\nÑòàòü: " << (f->isMan ? "Man" : "Woman") << " ";
-		cout << "\nÀäðåñà: " << f->Address << " ";
-		cout << "\nÏîøò.³íäåêñ: " << f->PostArea << " ";
-		cout << "\nÊîìïàí³ÿ: " << f->Company << " " << endl << endl;
+		cout << "\nÐ¡Ñ‚Ð°Ñ‚ÑŒ: " << (f->isMan ? "Man" : "Woman") << " ";
+		cout << "\nÐÐ´Ñ€ÐµÑÐ°: " << f->Address << " ";
+		cout << "\nÐŸÐ¾ÑˆÑ‚.Ñ–Ð½Ð´ÐµÐºÑ: " << f->PostArea << " ";
+		cout << "\nÐšÐ¾Ð¼Ð¿Ð°Ð½Ñ–Ñ: " << f->Company << " " << endl << endl;
 	}
 	cout << " <<<<<< ALL <<<<<<\n";
 }
@@ -107,12 +107,12 @@ Type Contacts<Type>::ShowExtra(Type x)
 template<typename Type>
  void Contacts<Type>::Print(Type f) {
 	cout << "\n\nContact found ["<<f.Name<< "]: ";
-	cout << "\n²ì'ÿ: " << f.Name << " " << "\nÒåëåôîí: ";
+	cout << "\nÐ†Ð¼'Ñ: " << f.Name << " " << "\nÐ¢ÐµÐ»ÐµÑ„Ð¾Ð½: ";
 	cout << "+" << to_string(f.Tel) << " ";
-	cout << "\nÑòàòü: " << (f.isMan ? "Man" : "Woman") << " ";
-	cout << "\nÀäðåñà: " << f.Address << " ";
-	cout << "\nÏîøò.³íäåêñ: " << f.PostArea << " ";
-	cout << "\nÊîìïàí³ÿ: " << f.Company << " " << endl << endl;
+	cout << "\nÐ¡Ñ‚Ð°Ñ‚ÑŒ: " << (f.isMan ? "Man" : "Woman") << " ";
+	cout << "\nÐÐ´Ñ€ÐµÑÐ°: " << f.Address << " ";
+	cout << "\nÐŸÐ¾ÑˆÑ‚.Ñ–Ð½Ð´ÐµÐºÑ: " << f.PostArea << " ";
+	cout << "\nÐšÐ¾Ð¼Ð¿Ð°Ð½Ñ–Ñ: " << f.Company << " " << endl << endl;
 }
  template<typename Type>
  void Contacts<Type>::ReadFromFile(string path) {

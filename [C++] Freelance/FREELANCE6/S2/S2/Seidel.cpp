@@ -6,16 +6,16 @@
 
 using namespace std;
 
-/* ����� ������� */
+/* РњРµС‚РѕРґ Р—РµР№РґРµР»СЏ */
 double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 	cout << "Solving with Seidel method:\n\nNormalizing matrix..\n";
 	SquareMatrix tmp = CopyMatrix(A);
 	double *b1 = new double[A.size];
-	for (int i = 0; i < A.size; i++) {/*������� �� �������������� �������*/
+	for (int i = 0; i < A.size; i++) {/*Р—РІРѕРґРёРјРѕ РґРѕ РЅРѕСЂРјР°Р»С–Р·РѕРІР°РЅРѕРіРѕ РІРёРіР»СЏРґСѓ*/
 		for (int j = 0; j < A.size; j++) {
 			if (i == j)
 				tmp.elems[i][j] = (10 - A.elems[i][j]) / 10;
-			else /* �������� - ������� */
+			else /* РґС–Р°РіРѕРЅР°Р»СЊ - РіРѕР»РѕРІРЅР° */
 				tmp.elems[i][j] = -(A.elems[i][j] / 10);
 			cout << tmp.elems[i][j] << " ";
 		}
@@ -30,13 +30,13 @@ double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 	while (true)
 	{
 		if (eps < epsilon || k > 1000) break;
-		//�� ��� ���� �������
+		//РЅСѓ С‚СѓС‚ С‚РёРїСѓ С„РѕСЂРјСѓР»Р°
 		//xk(n+1)=A(k1)*x1(n)+A(k2)*x2(n)+A(k3)*x3(n)+B(k)
 		for (int i = 0; i < A.size; i++) {
 			double S = 0;
 			for (int j = 0; j < A.size; j++) {
 				if (j < i) S += tmp.elems[i][j] * X0[j];
-				else /*���� ������� �� ��������� �� ������ �0*/
+				else /*СЏРєС‰Рѕ РµР»РµРјРµРЅС‚ РїС–Рґ РґС–Р°РіРѕРЅР°Р»Р»СЋ С‚Рѕ Р±РµСЂРµРјРѕ С…0*/
 					S += tmp.elems[i][j] * X[j];
 			} S += b1[i];
 			X[i] = S;
@@ -45,8 +45,8 @@ double* SolveSeidel(SquareMatrix A, double *b, double epsilon) {
 		cout << "Iteration: " << k << "   ";
 		for (int i = 0; i < A.size; i++) {
 			if (fabs(X[i] - X0[i]) < eps) {
-				eps = fabs(X[i] - X0[i]); /*�������� �� ��������
-										  abs( x ���������� - x ���������)*/
+				eps = fabs(X[i] - X0[i]); /*РїРµСЂРµРІС–СЂРєР° РЅР° Р·Р±С–Р¶РЅС–СЃС‚СЊ
+										  abs( x РїРѕРїРµСЂРµРґРЅС–Р№ - x С‚РµРїРµСЂС–С€РЅС–Р№)*/
 			}
 			cout << X[i] << " ";
 			X0[i] = X[i];

@@ -25,7 +25,7 @@ class ODD {
 		{
 			if (!isdigit(var) && var != '-')
 			{
-				cout << "\nÏîìèëêà. Öå íå ÷èñëî. Ñïğîáóéòå ùå ğàç\n";
+				cout << "\nĞŸĞ¾Ğ¼Ğ¸Ğ»ĞºĞ°. Ğ¦Ğµ Ğ½Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾. Ğ¡Ğ¿Ñ€Ğ¾Ğ±ÑƒĞ¹Ñ‚Ğµ Ñ‰Ğµ Ñ€Ğ°Ğ·\n";
 				return false;
 			}
 		}
@@ -33,7 +33,7 @@ class ODD {
 		num = value;
 		if (value < max && value > min) {
 			return true;
-		} cout << "\nÏîìèëêà. ×èñëî íå â³ä'ºìíå\n";
+		} cout << "\nĞŸĞ¾Ğ¼Ğ¸Ğ»ĞºĞ°. Ğ§Ğ¸ÑĞ»Ğ¾ Ğ½Ğµ Ğ²Ñ–Ğ´'Ñ”Ğ¼Ğ½Ğµ\n";
 		return false;
 		
 
@@ -41,7 +41,7 @@ class ODD {
 
 public:
 	ODD() {
-		cout << "\nÂâåä³òü ÷èñëî: ";
+		cout << "\nĞ’Ğ²ĞµĞ´Ñ–Ñ‚ÑŒ Ñ‡Ğ¸ÑĞ»Ğ¾: ";
 		input();
 	}
 	ODD(int num) {

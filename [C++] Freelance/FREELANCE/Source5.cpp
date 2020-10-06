@@ -9,16 +9,16 @@ using namespace std;
 int main() {
 	SetConsoleOutputCP(1251);
 	double a,b;
-	cout << "������ ��������� �����: ";
+	cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃРµР»СЊРЅРёРє РґСЂРѕР±Сѓ: ";
 	cin >> a;
-	cout << "������ ��������� �����: ";
+	cout << "Р’РІРµРґС–С‚СЊ Р·РЅР°РјРµРЅРЅРёРє РґСЂРѕР±Сѓ: ";
 	cin >> b;
 
 	double d = a / b;
 
 	std::ostringstream sstream;
 	sstream << d;
-	string str = sstream.str();	// ������������� double to string (C++03)
+	string str = sstream.str();	// РєРѕРЅРІРµСЂС‚СѓРІР°РЅРЅСЏ double to string (C++03)
 
 	string last = str.substr(str.find_first_of('.')+1, str.length());
 	for (int i = 1; i < last.length(); i++) {
@@ -26,8 +26,8 @@ int main() {
 			last = last.substr(0, i);
 		}
 	}
-	cout << "���������: " << str<<endl;
-	cout << "����� �����  = "<<last;
+	cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << str<<endl;
+	cout << "РџРµСЂС–РѕРґ РґСЂРѕР±Сѓ  = "<<last;
 
 	_getch();
 	return 0;

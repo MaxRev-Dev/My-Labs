@@ -7,8 +7,8 @@
 using namespace std;
 class Fractions {
 private:
-	/*Рахуємо НСД(greatest common divisor) за алгоритмом Евкліда
-	(обидва аргументи мають бути додатні)*/
+	/*Р Р°С…СѓС”РјРѕ РќРЎР”(greatest common divisor) Р·Р° Р°Р»РіРѕСЂРёС‚РјРѕРј Р•РІРєР»С–РґР°
+	(РѕР±РёРґРІР° Р°СЂРіСѓРјРµРЅС‚Рё РјР°СЋС‚СЊ Р±СѓС‚Рё РґРѕРґР°С‚РЅС–)*/
 	long long gcd(long long a, long long b) {
 		while (a != b) {
 			if (a > b) {
@@ -23,7 +23,7 @@ private:
 public:
 	long long numerator, denominator;
 
-	Fractions() { //випадковий дріб
+	Fractions() { //РІРёРїР°РґРєРѕРІРёР№ РґСЂС–Р±
 		numerator = 0 + rand() % 10;
 		denominator = 1 + rand() % 10;
 	}
@@ -35,7 +35,7 @@ public:
 
 	Fractions(long long n, long long d) {
 		if (d == 0) {
-			cerr << "Знаменник не може бути 0" << endl;
+			cerr << "Р—РЅР°РјРµРЅРЅРёРє РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё 0" << endl;
 			exit(0);
 		}
 		else if (n == 0) {
@@ -59,63 +59,63 @@ public:
 		}
 	}
 
-	//зміна типу
+	//Р·РјС–РЅР° С‚РёРїСѓ
 	operator int() { return (static_cast<int>((numerator) / denominator)); }
 	operator float() { return ((float)numerator) / denominator; }
 	operator double() { return ((double)numerator) / denominator; }
 };
 
-/*Перевантаження майже всіх загальних операторів*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РјР°Р№Р¶Рµ РІСЃС–С… Р·Р°РіР°Р»СЊРЅРёС… РѕРїРµСЂР°С‚РѕСЂС–РІ*/
 #pragma region OperatorOverloads
-/*Перевантаження оператора додавання*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґРѕРґР°РІР°РЅРЅСЏ*/
 Fractions operator+(const Fractions& lhs, const Fractions& rhs) {
 	return *(new Fractions(lhs.numerator*rhs.denominator
 		+ rhs.numerator*lhs.denominator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора додавання з присвоєнням*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґРѕРґР°РІР°РЅРЅСЏ Р· РїСЂРёСЃРІРѕС”РЅРЅСЏРј*/
 Fractions operator+=(Fractions& lhs, const Fractions& rhs) {
 	return lhs = *(new Fractions(lhs.numerator*rhs.denominator
 		+ rhs.numerator*lhs.denominator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора віднімання*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ*/
 Fractions operator-(const Fractions& lhs, const Fractions& rhs) {
 	return *(new Fractions(lhs.numerator*rhs.denominator
 		- rhs.numerator*lhs.denominator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора віднімання з присвоєнням */
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ Р· РїСЂРёСЃРІРѕС”РЅРЅСЏРј */
 Fractions operator-=(Fractions& lhs, const Fractions& rhs) {
 	return lhs = *(new Fractions(lhs.numerator*rhs.denominator
 		- rhs.numerator*lhs.denominator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора множення*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РјРЅРѕР¶РµРЅРЅСЏ*/
 Fractions operator*(const Fractions& lhs, const Fractions& rhs) {
 	return *(new Fractions(lhs.numerator*rhs.numerator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора множення з присвоєнням*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РјРЅРѕР¶РµРЅРЅСЏ Р· РїСЂРёСЃРІРѕС”РЅРЅСЏРј*/
 Fractions operator*=(Fractions& lhs, const Fractions& rhs) {
 	return lhs = *(new Fractions(lhs.numerator*rhs.numerator,
 		lhs.denominator*rhs.denominator));
 }
-/*Перевантаження оператора множення цілого числа на дріб*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РјРЅРѕР¶РµРЅРЅСЏ С†С–Р»РѕРіРѕ С‡РёСЃР»Р° РЅР° РґСЂС–Р±*/
 Fractions operator*(int lhs, const Fractions& rhs) {
 	return *(new Fractions(lhs*rhs.numerator, rhs.denominator));
 }
-/*Перевантаження оператора множення дробу на ціле число*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РјРЅРѕР¶РµРЅРЅСЏ РґСЂРѕР±Сѓ РЅР° С†С–Р»Рµ С‡РёСЃР»Рѕ*/
 Fractions operator*(const Fractions& rhs, int lhs) {
 	return *(new Fractions(lhs*rhs.numerator, rhs.denominator));
 }
-/*Перевантаження оператора ділення*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґС–Р»РµРЅРЅСЏ*/
 Fractions operator/(const Fractions& lhs, const Fractions& rhs) {
 	return *(new Fractions(lhs.numerator*rhs.denominator,
 		lhs.denominator*rhs.numerator));
 }
-/*Перевантаження оператора для поміщення
-об'єкту в потік через форматований ввід*/
+/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґР»СЏ РїРѕРјС–С‰РµРЅРЅСЏ
+РѕР±'С”РєС‚Сѓ РІ РїРѕС‚С–Рє С‡РµСЂРµР· С„РѕСЂРјР°С‚РѕРІР°РЅРёР№ РІРІС–Рґ*/
 std::ostream& operator<<(std::ostream &strm, const Fractions &a) {
 	return (a.denominator == 1) ? strm << a.numerator :
 		strm << a.numerator << "/" << a.denominator;
@@ -123,7 +123,7 @@ std::ostream& operator<<(std::ostream &strm, const Fractions &a) {
 }
 #pragma endregion
 
-/*Допоміжна функція для ініціалізації масиву об'єктів дробів*/
+/*Р”РѕРїРѕРјС–Р¶РЅР° С„СѓРЅРєС†С–СЏ РґР»СЏ С–РЅС–С†С–Р°Р»С–Р·Р°С†С–С— РјР°СЃРёРІСѓ РѕР±'С”РєС‚С–РІ РґСЂРѕР±С–РІ*/
 Fractions GetFraction(string x) {
 	string str, n = "", d = "";
 	cout << x;
@@ -143,20 +143,20 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	Fractions *n = new Fractions[2];
-	cout << "Випадкові дроби: \n";
+	cout << "Р’РёРїР°РґРєРѕРІС– РґСЂРѕР±Рё: \n";
 	cout << "1) = " << n[0] << " \n2) = " << n[1] << endl << endl;
 	cout << n[0] << " - " << n[1] << " = " << n[0] - n[1] << endl;
 	cout << n[0] << " + " << n[1] << " = " << n[0] + n[1] << endl;
 	cout << n[0] << " * " << n[1] << " = " << n[0] * n[1] << endl;
 	cout << n[0] << " / " << n[1] << " = " << n[0] / n[1] << endl;
-	delete n; // збираємо непотріб
-	while (true) { // для повторного введення
+	delete n; // Р·Р±РёСЂР°С”РјРѕ РЅРµРїРѕС‚СЂС–Р±
+	while (true) { // РґР»СЏ РїРѕРІС‚РѕСЂРЅРѕРіРѕ РІРІРµРґРµРЅРЅСЏ
 		n = new Fractions[2]{
-			GetFraction("Введіть перший дріб у форматі XX/YY або ціле число:"),
-			GetFraction("Введіть другий дріб у форматі XX/YY або ціле число:") // ініцілізуємо динам. масив через функцію
+			GetFraction("Р’РІРµРґС–С‚СЊ РїРµСЂС€РёР№ РґСЂС–Р± Сѓ С„РѕСЂРјР°С‚С– XX/YY Р°Р±Рѕ С†С–Р»Рµ С‡РёСЃР»Рѕ:"),
+			GetFraction("Р’РІРµРґС–С‚СЊ РґСЂСѓРіРёР№ РґСЂС–Р± Сѓ С„РѕСЂРјР°С‚С– XX/YY Р°Р±Рѕ С†С–Р»Рµ С‡РёСЃР»Рѕ:") // С–РЅС–С†С–Р»С–Р·СѓС”РјРѕ РґРёРЅР°Рј. РјР°СЃРёРІ С‡РµСЂРµР· С„СѓРЅРєС†С–СЋ
 		}; 
-		//Обробка операції		
-		cout << "Виконати операцію [ * , / , + , - ] : ";
+		//РћР±СЂРѕР±РєР° РѕРїРµСЂР°С†С–С—		
+		cout << "Р’РёРєРѕРЅР°С‚Рё РѕРїРµСЂР°С†С–СЋ [ * , / , + , - ] : ";
 		char buff; cin >> buff;	cin.get(); // flush buffer
 		switch (buff) {
 			case '*': {

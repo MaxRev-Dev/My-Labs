@@ -6,7 +6,7 @@
 
 /*	
 		Linked List
-	Copyright © MaxRev 2017
+	Copyright Â© MaxRev 2017
 	  All rights reserved
 */
 template< typename T >
@@ -105,6 +105,6 @@ List< T >::~List() {
 }
 
 /*
-	Copyright © MaxRev 2017
+	Copyright Â© MaxRev 2017
 	  All rights reserved
 */

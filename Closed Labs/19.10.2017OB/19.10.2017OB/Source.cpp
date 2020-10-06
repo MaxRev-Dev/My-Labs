@@ -8,15 +8,15 @@ class LinearSystem {
 private:
 	double **matrix,*B;
 	int linesCount, XCount,i,j;
-	//Вивід коренів
+	//Р’РёРІС–Рґ РєРѕСЂРµРЅС–РІ
 	void PrintSolved(double *x) {
-		cout << "розв'язки системи:\n";
+		cout << "СЂРѕР·РІ'СЏР·РєРё СЃРёСЃС‚РµРјРё:\n";
 		for (i = 0; i<linesCount; i++)
 			cout <<"X"<<i+1<< "= " <<x[i] << endl;
 		cout << endl;
 	}
 
-	//Приватний конструктор для повернення результатів через вказівник 
+	//РџСЂРёРІР°С‚РЅРёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РїРѕРІРµСЂРЅРµРЅРЅСЏ СЂРµР·СѓР»СЊС‚Р°С‚С–РІ С‡РµСЂРµР· РІРєР°Р·С–РІРЅРёРє 
 	LinearSystem(double **mtx,int lines, int x) {
 		this->matrix = mtx;
 		this->linesCount = lines;
@@ -28,12 +28,12 @@ private:
 	{
 		double *x, max;
 		int k, index;
-		const double eps = 0.00001;  // точність
+		const double eps = 0.00001;  // С‚РѕС‡РЅС–СЃС‚СЊ
 		x = new double[n];
 		k = 0;
 		while (k < n)
 		{
-			// Пошук рядка з максимальним a[i][k]
+			// РџРѕС€СѓРє СЂСЏРґРєР° Р· РјР°РєСЃРёРјР°Р»СЊРЅРёРј a[i][k]
 			max = abs(a[k][k]);
 			index = k;
 			for (int i = k + 1; i < n; i++)
@@ -44,12 +44,12 @@ private:
 					index = i;
 				}
 			}
-			// Перестановка рядків
+			// РџРµСЂРµСЃС‚Р°РЅРѕРІРєР° СЂСЏРґРєС–РІ
 			if (max < eps)
 			{
-				//немає нулювих діагональних елементів
-				cout << "Розв'язок неможливий через не нульовий стовчик ";
-				cout << index << " матриці A" << endl;
+				//РЅРµРјР°С” РЅСѓР»СЋРІРёС… РґС–Р°РіРѕРЅР°Р»СЊРЅРёС… РµР»РµРјРµРЅС‚С–РІ
+				cout << "Р РѕР·РІ'СЏР·РѕРє РЅРµРјРѕР¶Р»РёРІРёР№ С‡РµСЂРµР· РЅРµ РЅСѓР»СЊРѕРІРёР№ СЃС‚РѕРІС‡РёРє ";
+				cout << index << " РјР°С‚СЂРёС†С– A" << endl;
 				return 0;
 			}
 			for (int j = 0; j < n; j++)
@@ -61,22 +61,22 @@ private:
 			double temp = y[k];
 			y[k] = y[index];
 			y[index] = temp;
-			// Нормалізація рівнянь
+			// РќРѕСЂРјР°Р»С–Р·Р°С†С–СЏ СЂС–РІРЅСЏРЅСЊ
 			for (int i = k; i < n; i++)
 			{
 				double temp = a[i][k];
-				if (abs(temp) < eps) continue; // це нульвий тому пропускаємо
+				if (abs(temp) < eps) continue; // С†Рµ РЅСѓР»СЊРІРёР№ С‚РѕРјСѓ РїСЂРѕРїСѓСЃРєР°С”РјРѕ
 				for (int j = 0; j < n; j++)
 					a[i][j] = a[i][j] / temp;
 				y[i] = y[i] / temp;
-				if (i == k)  continue; // це таке ж як і рахуємо зараз 
+				if (i == k)  continue; // С†Рµ С‚Р°РєРµ Р¶ СЏРє С– СЂР°С…СѓС”РјРѕ Р·Р°СЂР°Р· 
 				for (int j = 0; j < n; j++)
 					a[i][j] = a[i][j] - a[k][j];
 				y[i] = y[i] - y[k];
 			}
 			k++;
 		}
-		// Зворотній хід
+		// Р—РІРѕСЂРѕС‚РЅС–Р№ С…С–Рґ
 		for (k = n - 1; k >= 0; k--)
 		{
 			x[k] = y[k];
@@ -86,86 +86,86 @@ private:
 		return x;
 	}
 public:
-	//Конструктор 
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 
 	LinearSystem() {
-		cout << "Потрібно ввести кількість рядків, невідомих \n\tта коефіціенти перед ними:\n";
+		cout << "РџРѕС‚СЂС–Р±РЅРѕ РІРІРµСЃС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ СЂСЏРґРєС–РІ, РЅРµРІС–РґРѕРјРёС… \n\tС‚Р° РєРѕРµС„С–С†С–РµРЅС‚Рё РїРµСЂРµРґ РЅРёРјРё:\n";
 		
-		cout << "Кількість рядків: "; cin >> linesCount;
-		cout << "Кількість невідомих:"; cin >> XCount;
+		cout << "РљС–Р»СЊРєС–СЃС‚СЊ СЂСЏРґРєС–РІ: "; cin >> linesCount;
+		cout << "РљС–Р»СЊРєС–СЃС‚СЊ РЅРµРІС–РґРѕРјРёС…:"; cin >> XCount;
 			
 		matrix = new double*[linesCount];
 		for (int i = 0; i < linesCount; i++) {
 			matrix[i] = new double[XCount];
 		}
-		cout << "Введіть коефіціенти СЛАР: "<<endl;
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕРµС„С–С†С–РµРЅС‚Рё РЎР›РђР : "<<endl;
 		for (int i = 0; i < linesCount; i++) {
-			cout << "Рядок: " << i + 1 << endl;
+			cout << "Р СЏРґРѕРє: " << i + 1 << endl;
 			for (int j = 0; j < XCount; j++) {
 				cout << "X" << j + 1 << "="; cin >> matrix[i][j];
 			} cout << endl;
 		}
 		B = new double[linesCount];
-		cout << "Введіть стовпчик з вільними коефіцієнтами: "<<endl;
+		cout << "Р’РІРµРґС–С‚СЊ СЃС‚РѕРІРїС‡РёРє Р· РІС–Р»СЊРЅРёРјРё РєРѕРµС„С–С†С–С”РЅС‚Р°РјРё: "<<endl;
 		for (int i = 0; i < linesCount; i++) {
 			cout<< "[" << i + 1 << "]  =";	cin >> B[i];
 		}
-		cout << "Матриця введена" << endl<<endl;
+		cout << "РњР°С‚СЂРёС†СЏ РІРІРµРґРµРЅР°" << endl<<endl;
 
 	}
 	
-	//Перевантаження оператора додавання
+	//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґРѕРґР°РІР°РЅРЅСЏ
 	LinearSystem* operator+(LinearSystem & R) {
-		//Перевірка на сумісність
+		//РџРµСЂРµРІС–СЂРєР° РЅР° СЃСѓРјС–СЃРЅС–СЃС‚СЊ
 		if (R.linesCount != this->linesCount&& this->XCount != R.XCount) {
-			cout << "Розміри СЛАР не однакові"<<endl;
+			cout << "Р РѕР·РјС–СЂРё РЎР›РђР  РЅРµ РѕРґРЅР°РєРѕРІС–"<<endl;
 			return nullptr;
 		}
-		//Матриця для результатів
+		//РњР°С‚СЂРёС†СЏ РґР»СЏ СЂРµР·СѓР»СЊС‚Р°С‚С–РІ
 		double**matrixTmp = new double*[linesCount];
 		for (int i = 0; i < linesCount; i++) {
 			matrixTmp[i] = new double[XCount];
 		}
-		//Віднімання кожного елемента окремо
+		//Р’С–РґРЅС–РјР°РЅРЅСЏ РєРѕР¶РЅРѕРіРѕ РµР»РµРјРµРЅС‚Р° РѕРєСЂРµРјРѕ
 		for (int i = 0; i < linesCount; i++) {
 			for (int j = 0; j < XCount; j++) {
 				matrixTmp[i][j] = this->matrix[i][j] + R.matrix[i][j];
 			}
 		}
-		cout << "Матриці додані!\n";
+		cout << "РњР°С‚СЂРёС†С– РґРѕРґР°РЅС–!\n";
 
-		//Повертамо новий об'єкт через вказівник
+		//РџРѕРІРµСЂС‚Р°РјРѕ РЅРѕРІРёР№ РѕР±'С”РєС‚ С‡РµСЂРµР· РІРєР°Р·С–РІРЅРёРє
 		return new LinearSystem(matrixTmp,linesCount,XCount);
 	}
 
-	//Перевантаження оператора віднімання
+	//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РІС–РґРЅС–РјР°РЅРЅСЏ
 	LinearSystem* operator-(LinearSystem &R) {
-		//Перевірка на сумісність
+		//РџРµСЂРµРІС–СЂРєР° РЅР° СЃСѓРјС–СЃРЅС–СЃС‚СЊ
 		if (R.linesCount != this->linesCount&& this->XCount != R.XCount) {
-			cout << "Розміри СЛАР не однакові" << endl;
+			cout << "Р РѕР·РјС–СЂРё РЎР›РђР  РЅРµ РѕРґРЅР°РєРѕРІС–" << endl;
 			return nullptr;
 		}
-		//Матриця для результатів
+		//РњР°С‚СЂРёС†СЏ РґР»СЏ СЂРµР·СѓР»СЊС‚Р°С‚С–РІ
 		double**matrixTmp = new double*[linesCount];
 		for (int i = 0; i < linesCount; i++) {
 			matrixTmp[i] = new double[XCount];
 		}
-		//Додавання кожного елемента окремо
+		//Р”РѕРґР°РІР°РЅРЅСЏ РєРѕР¶РЅРѕРіРѕ РµР»РµРјРµРЅС‚Р° РѕРєСЂРµРјРѕ
 		for (int i = 0; i < linesCount; i++) {
 			for (int j = 0; j < XCount; j++) {
 				matrixTmp[i][j] = this->matrix[i][j] - R.matrix[i][j];
 			}
 		}
-		cout << "Різницю виконано!\n";
-		//Повертамо новий об'єкт через вказівник
+		cout << "Р С–Р·РЅРёС†СЋ РІРёРєРѕРЅР°РЅРѕ!\n";
+		//РџРѕРІРµСЂС‚Р°РјРѕ РЅРѕРІРёР№ РѕР±'С”РєС‚ С‡РµСЂРµР· РІРєР°Р·С–РІРЅРёРє
 		return new LinearSystem(matrixTmp, linesCount, XCount);
 	}
 	
-	//Метод Гауса
+	//РњРµС‚РѕРґ Р“Р°СѓСЃР°
 	void SolveWithGaussMethodCompl() {
 		PrintSolved(Gauss(this->matrix,this->B,linesCount));
 	}
 	
-	//Метод класу для виводу матриці
+	//РњРµС‚РѕРґ РєР»Р°СЃСѓ РґР»СЏ РІРёРІРѕРґСѓ РјР°С‚СЂРёС†С–
 	void ShowMatrix() {
 		for (int i = 0; i < linesCount; i++) {
 			for (int j = 0; j < XCount; j++) {
@@ -193,9 +193,9 @@ int main() {
 		solvedMinus[0].ShowMatrix();
 	}
 
-	cout << "\n\nМатриця 1" << endl;
+	cout << "\n\nРњР°С‚СЂРёС†СЏ 1" << endl;
 	heap[0].SolveWithGaussMethodCompl();
-	cout << "Матриця 2"<<endl;
+	cout << "РњР°С‚СЂРёС†СЏ 2"<<endl;
 	heap[1].SolveWithGaussMethodCompl();
 
 	_getch();

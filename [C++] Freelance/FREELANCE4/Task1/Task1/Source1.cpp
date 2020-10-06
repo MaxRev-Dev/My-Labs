@@ -17,8 +17,8 @@ void Calc(vector<Item> v) {
 	vector<int> made;
 	vector<Item> sum, res = v;
 	made.push_back(v.back().fcode);
-	cout << "|\t\t   |   ������ ����   |" << endl;
-	cout << "| ���������\t" << "   |  2   3   4   5  |" << endl;
+	cout << "|\t\t   |   Ð ÑŸÐ Ñ‘Ð¡â€šÐ Ñ•Ð Ñ˜Ð Â° Ð Ð†Ð Â°Ð Ñ–Ð Â°   |" << endl;
+	cout << "| Ð Â¤Ð Â°Ð Ñ”Ð¡Ñ“Ð Â»Ð¡ÐŠÐ¡â€šÐ ÂµÐ¡â€š\t" << "   |  2   3   4   5  |" << endl;
 	for (size_t i = 0; i < v.size(); i++) {
 		int lsum = 0, cnt = 0, resf;
 		int *wmark = new int[6];
@@ -33,14 +33,14 @@ void Calc(vector<Item> v) {
 				++wmark[v[i].mark];
 			}
 		}
-		cout << "| ���������: " << setw(5) << made.back();
+		cout << "| Ð Â¤Ð Â°Ð Ñ”Ð¡Ñ“Ð Â»Ð¡ÐŠÐ¡â€šÐ ÂµÐ¡â€š: " << setw(5) << made.back();
 		for (int i = 2; i <= 5; i++) {
 			if (wmark[i] != 0) {
 				cout << " | " << setw(1) << setprecision(2) << (1.0*wmark[i] / cnt * 100);
 			}
 			else cout << " | " << 0;
 		}
-		cout << " | �������� ���: " << lsum / cnt << endl;
+		cout << " | Ð ÐŽÐ ÂµÐ¡Ð‚Ð ÂµÐ Ò‘Ð Ð…Ð¡â€“Ð â„– Ð Â±Ð Â°Ð Â»: " << lsum / cnt << endl;
 
 		resf = v.back().fcode;
 		while (contains(made, resf)) {
@@ -59,7 +59,7 @@ void Calc(vector<Item> v) {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//������ 1
+	//Ð Â·Ð Â°Ð Ò‘Ð Â°Ð¡â€¡Ð Â° 1
 	auto f1 = ReadFile("./data.txt");
 	Calc(*f1);
 	_getch();

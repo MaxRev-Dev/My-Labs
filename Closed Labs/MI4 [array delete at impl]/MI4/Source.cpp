@@ -23,13 +23,13 @@ int* DeleteAt(int *a, int n) {
 int main() {
 	SetConsoleOutputCP(1251);
 	
-	cout << "Ââåä³òü N(ðîçì³ð ìàñèâó): "; 
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ N(Ñ€Ð¾Ð·Ð¼Ñ–Ñ€ Ð¼Ð°ÑÐ¸Ð²Ñƒ): "; 
 	cin >> ::size;
 	int  *a = new int[::size],n;
 	for (int i = 0; i < ::size; i++) a[i] = 1 + rand() % 9; 
 	Show(a);
 
-	cout << "\n²íäåêñ åëåìåíòà äëÿ âèäàëåííÿ: ";
+	cout << "\nÐ†Ð½Ð´ÐµÐºÑ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð´Ð»Ñ Ð²Ð¸Ð´Ð°Ð»ÐµÐ½Ð½Ñ: ";
 	cin >> n;
 	a=DeleteAt(a, n);
 	Show(a);

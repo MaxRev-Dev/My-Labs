@@ -37,13 +37,13 @@ public:
 	}
 	Dimentions *dim;
 	string Status(){
-		return "Літак: " + this->type + "\nМісцерозташування: " + this->location + "\nРозміри ДхШхВ: " +
+		return "Р›С–С‚Р°Рє: " + this->type + "\nРњС–СЃС†РµСЂРѕР·С‚Р°С€СѓРІР°РЅРЅСЏ: " + this->location + "\nР РѕР·РјС–СЂРё Р”С…РЁС…Р’: " +
 			static_cast<ostringstream*>(&(ostringstream() << this->length))->str() + "x"+
 				static_cast<ostringstream*>(&(ostringstream() << this->width))->str()+"x"+
 					static_cast<ostringstream*>(&(ostringstream() << this->heigth))->str() 
-			+ "\nКолір: " + this->color +
-			+"\nТехнічні дані: \n" +"\tПаливо: "+ static_cast<ostringstream*>(&(ostringstream()<<this->fuel))->str()+
-			"\n\tЗброя: "+this->weapons+"\n\tГотовність: "+(this->isReady?"Готовий":"В ремонті");
+			+ "\nРљРѕР»С–СЂ: " + this->color +
+			+"\nРўРµС…РЅС–С‡РЅС– РґР°РЅС–: \n" +"\tРџР°Р»РёРІРѕ: "+ static_cast<ostringstream*>(&(ostringstream()<<this->fuel))->str()+
+			"\n\tР—Р±СЂРѕСЏ: "+this->weapons+"\n\tР“РѕС‚РѕРІРЅС–СЃС‚СЊ: "+(this->isReady?"Р“РѕС‚РѕРІРёР№":"Р’ СЂРµРјРѕРЅС‚С–");
 	}
 };
 

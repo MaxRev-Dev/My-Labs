@@ -7,14 +7,14 @@ using namespace std;
 
 /*
 BinaryTree
-Copyright © MaxRev 2017
+Copyright Â© MaxRev 2017
 All rights reserved
 */
 struct Item {
 	int id;
 	std::string name, tel;
 	friend ostream& operator<<(ostream&out ,const Item &i) {
-		return out<<"#"<<i.id << " ²ì'ÿ: " << i.name.c_str() << " Òåë.: " << i.tel.c_str() << endl;
+		return out<<"#"<<i.id << " Ð†Ð¼'Ñ: " << i.name.c_str() << " Ð¢ÐµÐ».: " << i.tel.c_str() << endl;
 	}
 	friend bool operator< (const Item& lhs, const Item& rhs) {
 		return lhs.id < rhs.id;
@@ -487,6 +487,6 @@ void  BinaryTree::level_even_odd(struct Tree *node)
 
 /*
 BinaryTree
-Copyright © MaxRev 2017
+Copyright Â© MaxRev 2017
 All rights reserved
 */

@@ -30,22 +30,22 @@ int main() {
 		t->root = insertTreeNode(t->root, *item);
 		delete item;
 	}
-	cout << "Çãåíåðîâàííà áàçà: \n";
+	cout << "Ð—Ð³ÐµÐ½ÐµÑ€Ð¾Ð²Ð°Ð½Ð½Ð° Ð±Ð°Ð·Ð°: \n";
 	t->printTreeInOrder(t->root);
 
-	cout << "Ââåä³òü íîìåð çàïèñó äëÿ ïîøóêó: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð¿Ð¸ÑÑƒ Ð´Ð»Ñ Ð¿Ð¾ÑˆÑƒÐºÑƒ: ";
 	string str; getline(cin, str);
 	int x = atoi(str.c_str());
 	t->FindAndPrintNode(t->root, x);
-	cout << "Ââåä³òü íîìåð çàïèñó äëÿ ðåäàãóâàííÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð¿Ð¸ÑÑƒ Ð´Ð»Ñ Ñ€ÐµÐ´Ð°Ð³ÑƒÐ²Ð°Ð½Ð½Ñ: ";
 	cin >> x; cin.get();
 	Tree * s = t->lookUp(t->root, --x);
 	if (s == NULL) {
-		cout << "Íå çíàéäåíî òàêîãî" << endl;
+		cout << "ÐÐµ Ð·Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾ Ñ‚Ð°ÐºÐ¾Ð³Ð¾" << endl;
 	}
 	else {
-		cout << "Ââåä³òü ³ì'ÿ: "; getline(cin, s->data.name);
-		cout << "Ââåä³òü òåëåôîí: "; getline(cin, s->data.tel);
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ–Ð¼'Ñ: "; getline(cin, s->data.name);
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½: "; getline(cin, s->data.tel);
 	}
 	t->printTreePreOrder(t->root);
 	_getch();

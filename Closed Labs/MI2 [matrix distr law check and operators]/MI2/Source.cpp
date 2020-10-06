@@ -4,13 +4,13 @@
 
 using namespace std;
 
-int size; //Глобальна змінна для постійного розміру
+int size; //Р“Р»РѕР±Р°Р»СЊРЅР° Р·РјС–РЅРЅР° РґР»СЏ РїРѕСЃС‚С–Р№РЅРѕРіРѕ СЂРѕР·РјС–СЂСѓ
 
 class Matrix {
 private:
-	int **m;	// Матриця 
-	Matrix(int x) { // Допоміжний конструктор для створення 
-						//готової матриці з одним числом
+	int **m;	// РњР°С‚СЂРёС†СЏ 
+	Matrix(int x) { // Р”РѕРїРѕРјС–Р¶РЅРёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СЃС‚РІРѕСЂРµРЅРЅСЏ 
+						//РіРѕС‚РѕРІРѕС— РјР°С‚СЂРёС†С– Р· РѕРґРЅРёРј С‡РёСЃР»РѕРј
 		m = new int*[::size];
 		for (int i = 0; i < ::size; i++) {
 			m[i] = new int[::size];
@@ -20,7 +20,7 @@ private:
 		}
 	}
 public:
-	Matrix() { //Загальний конструктор з генератором випадкових чисел
+	Matrix() { //Р—Р°РіР°Р»СЊРЅРёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р· РіРµРЅРµСЂР°С‚РѕСЂРѕРј РІРёРїР°РґРєРѕРІРёС… С‡РёСЃРµР»
 		m = new int*[::size];
 		for (int i = 0; i < ::size; i++) {
 			m[i] = new int[::size];
@@ -30,7 +30,7 @@ public:
 		}
 	}
 	friend Matrix& operator*(Matrix&a, Matrix&b) { 
-		//Перевантаження оператора множення
+		//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РјРЅРѕР¶РµРЅРЅСЏ
 		Matrix *r = new Matrix(0);
 		for (int i = 0; i < ::size; i++) {
 			for (int j = 0; j < ::size; j++) {
@@ -42,7 +42,7 @@ public:
 		return *r;
 	}
 	friend Matrix& operator+(Matrix&a, Matrix&b) {
-		//Перевантаження оператора додавання
+		//РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РґРѕРґР°РІР°РЅРЅСЏ
 		Matrix *r = new Matrix(0);
 		for (int i = 0; i < ::size; i++) {
 			for (int j = 0; j < ::size; j++) {
@@ -51,8 +51,8 @@ public:
 		}
 		return *r;
 	}
-	bool operator==(Matrix&b) {  // Оператор порівняння
-		if (this->m == nullptr) return false; // Якщо матриця то вони не рівні 
+	bool operator==(Matrix&b) {  // РћРїРµСЂР°С‚РѕСЂ РїРѕСЂС–РІРЅСЏРЅРЅСЏ
+		if (this->m == nullptr) return false; // РЇРєС‰Рѕ РјР°С‚СЂРёС†СЏ С‚Рѕ РІРѕРЅРё РЅРµ СЂС–РІРЅС– 
 		for (int i = 0; i < ::size; i++) {
 			for (int j = 0; j < ::size; j++) {
 				if (this->m[i][j] != b.m[i][j]) return false;
@@ -60,7 +60,7 @@ public:
 		}
 		return true;
 	}
-	void ShowMatrix() { //Вивід матриці
+	void ShowMatrix() { //Р’РёРІС–Рґ РјР°С‚СЂРёС†С–
 		if (m == nullptr) return;
 		cout << endl;
 		for (int i = 0; i < ::size; i++) {
@@ -73,21 +73,21 @@ public:
 };
 
 bool Distribute(Matrix&a, Matrix&b,Matrix&c) {
-	cout << "За законом дистрибутивності:\n\t A*(B+C) == A*C+B*C"<<endl;
+	cout << "Р—Р° Р·Р°РєРѕРЅРѕРј РґРёСЃС‚СЂРёР±СѓС‚РёРІРЅРѕСЃС‚С–:\n\t A*(B+C) == A*C+B*C"<<endl;
 	return (a*(b + c)) == (a*b) + (a*c);
 }
 int main() {
 	SetConsoleOutputCP(1251);
 
-	cout << "Введіть розмір матриць: ";
+	cout << "Р’РІРµРґС–С‚СЊ СЂРѕР·РјС–СЂ РјР°С‚СЂРёС†СЊ: ";
 	cin >> ::size; cin.get();
 
 	Matrix *x = new Matrix[3];
 	x[0].ShowMatrix(); 
 	x[1].ShowMatrix();
 	x[2].ShowMatrix();
-	cout << "Закон дистрибутивності " <<
-		(Distribute(x[0], x[1], x[2])?"виконується":"не виконується");	
+	cout << "Р—Р°РєРѕРЅ РґРёСЃС‚СЂРёР±СѓС‚РёРІРЅРѕСЃС‚С– " <<
+		(Distribute(x[0], x[1], x[2])?"РІРёРєРѕРЅСѓС”С‚СЊСЃСЏ":"РЅРµ РІРёРєРѕРЅСѓС”С‚СЊСЃСЏ");	
 
 	_getch();
 	return 0;

@@ -8,43 +8,43 @@ using namespace std;
 
 class Bruteforce {
 private:
-	bool alfa, num, symb,reg; // змінні для фільтрації пошуку
+	bool alfa, num, symb,reg; // Р·РјС–РЅРЅС– РґР»СЏ С„С–Р»СЊС‚СЂР°С†С–С— РїРѕС€СѓРєСѓ
 	string pass_old,
 		charLow = "abcdefghijklmnopqrstuvwxyz", 
-		charHigh="ABCDEFGHIJKLMNOPQRSTUVWXYZ", //Оголошення всіх пошукових символів
+		charHigh="ABCDEFGHIJKLMNOPQRSTUVWXYZ", //РћРіРѕР»РѕС€РµРЅРЅСЏ РІСЃС–С… РїРѕС€СѓРєРѕРІРёС… СЃРёРјРІРѕР»С–РІ
 		nums="1234567890",
 		symbols=" !\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";
-	int max; // довжина пароля
-	volatile bool found=false; // змінна для виходу із глибинної рекурсії
+	int max; // РґРѕРІР¶РёРЅР° РїР°СЂРѕР»СЏ
+	volatile bool found=false; // Р·РјС–РЅРЅР° РґР»СЏ РІРёС…РѕРґСѓ С–Р· РіР»РёР±РёРЅРЅРѕС— СЂРµРєСѓСЂСЃС–С—
 
-	/*Тут робиться підбір пароля посимвольно
-	Пароль буде знайдений якщо ВСІ фільтри вказані правильно
+	/*РўСѓС‚ СЂРѕР±РёС‚СЊСЃСЏ РїС–РґР±С–СЂ РїР°СЂРѕР»СЏ РїРѕСЃРёРјРІРѕР»СЊРЅРѕ
+	РџР°СЂРѕР»СЊ Р±СѓРґРµ Р·РЅР°Р№РґРµРЅРёР№ СЏРєС‰Рѕ Р’РЎР† С„С–Р»СЊС‚СЂРё РІРєР°Р·Р°РЅС– РїСЂР°РІРёР»СЊРЅРѕ
 	*/
 	void Routine(std::string const& chars, size_t max_len, std::string const& cur) {
 		if (cur.length() == max_len) { 
-			return; // якщо довжина знайденого більша 
-			// то шукаємо далі але вище в стеку
+			return; // СЏРєС‰Рѕ РґРѕРІР¶РёРЅР° Р·РЅР°Р№РґРµРЅРѕРіРѕ Р±С–Р»СЊС€Р° 
+			// С‚Рѕ С€СѓРєР°С”РјРѕ РґР°Р»С– Р°Р»Рµ РІРёС‰Рµ РІ СЃС‚РµРєСѓ
 		}
 		else {
 			for (auto c : chars) {
 				std::string next = cur + c;
-				cout << "#"<<++counter<<" Знайдено: " << next << "  >>>  Перевірка...";
-				if (next == pass_old) { //перевірка на збіг
-					cout << "\nПароль успішно знадено! - " << next;
+				cout << "#"<<++counter<<" Р—РЅР°Р№РґРµРЅРѕ: " << next << "  >>>  РџРµСЂРµРІС–СЂРєР°...";
+				if (next == pass_old) { //РїРµСЂРµРІС–СЂРєР° РЅР° Р·Р±С–Рі
+					cout << "\nРџР°СЂРѕР»СЊ СѓСЃРїС–С€РЅРѕ Р·РЅР°РґРµРЅРѕ! - " << next;
 					found = true;
 					return;
 				}
 				else {
-					cout << " Не підходить! " << endl;
+					cout << " РќРµ РїС–РґС…РѕРґРёС‚СЊ! " << endl;
 					if (!found) Routine(chars, max_len, next);
 					else return;
 				}
 				if(found) return;
-			}// вихід з глибинної рекурсії
+			}// РІРёС…С–Рґ Р· РіР»РёР±РёРЅРЅРѕС— СЂРµРєСѓСЂСЃС–С—
 			if (found) return;
 		}
 	}
-	static int counter; // лічильник на будь-якому рівні рекурсії 
+	static int counter; // Р»С–С‡РёР»СЊРЅРёРє РЅР° Р±СѓРґСЊ-СЏРєРѕРјСѓ СЂС–РІРЅС– СЂРµРєСѓСЂСЃС–С— 
 public:
 	Bruteforce(string pass, bool alfa,bool regist, bool num, bool symb,int maxlength) {
 		pass_old = pass, this->alfa = alfa, this->num = num,
@@ -52,10 +52,10 @@ public:
 			max = maxlength;
 	}
 	void TryToCatchPass() {
-			Routine( // передача значень фільтрами
+			Routine( // РїРµСЂРµРґР°С‡Р° Р·РЅР°С‡РµРЅСЊ С„С–Р»СЊС‚СЂР°РјРё
 				(alfa?(reg? charLow + charHigh :charHigh + charLow) :"")+(num?nums:"")+(symb?symbols:"") 
 				,pass_old.length(),"");
-			cout << "\nГотово!"<<endl;
+			cout << "\nР“РѕС‚РѕРІРѕ!"<<endl;
 	}
 
 };
@@ -63,22 +63,22 @@ int Bruteforce::counter = 0;
 
 int main() {
 	SetConsoleOutputCP(1251);
-	cout << "Введіть пароль: ";
+	cout << "Р’РІРµРґС–С‚СЊ РїР°СЂРѕР»СЊ: ";
 	string  pass; int x; bool x1,x2, x3, x4;
 	getline(cin, pass);
-	cout << "Далі необхідно змінити фільтри: \n";
-	cout << "Перевіряти букви? [1/0] ";
+	cout << "Р”Р°Р»С– РЅРµРѕР±С…С–РґРЅРѕ Р·РјС–РЅРёС‚Рё С„С–Р»СЊС‚СЂРё: \n";
+	cout << "РџРµСЂРµРІС–СЂСЏС‚Рё Р±СѓРєРІРё? [1/0] ";
 	cin >> x; cin.get(); x1 = static_cast<bool>(x);
-	cout << "Спочатку нижній регістр букв? [1/0] ";
+	cout << "РЎРїРѕС‡Р°С‚РєСѓ РЅРёР¶РЅС–Р№ СЂРµРіС–СЃС‚СЂ Р±СѓРєРІ? [1/0] ";
 	cin >> x; cin.get(); x2 = static_cast<bool>(x);
-	cout << "Перевіряти числа? [1/0] ";
+	cout << "РџРµСЂРµРІС–СЂСЏС‚Рё С‡РёСЃР»Р°? [1/0] ";
 	cin >> x; cin.get(); x3 = static_cast<bool>(x);
-	cout << "Перевіряти спеціальні символи? [1/0] "; 
+	cout << "РџРµСЂРµРІС–СЂСЏС‚Рё СЃРїРµС†С–Р°Р»СЊРЅС– СЃРёРјРІРѕР»Рё? [1/0] "; 
 	cin >> x; cin.get(); x4 = static_cast<bool>(x);
 
 	Bruteforce *brfs = new Bruteforce(pass, x1, x2, x3,x4,pass.length());
-	cout << "\n!!! Довжина пароля збільшує час підбору у геометричній прогресії !!!\n";
-	cout << "Оптимальні довжини паролів - до 3 символів \n(це 70300 значень для 52 букв)\nНатисніть Enter для початку підбору\n";
+	cout << "\n!!! Р”РѕРІР¶РёРЅР° РїР°СЂРѕР»СЏ Р·Р±С–Р»СЊС€СѓС” С‡Р°СЃ РїС–РґР±РѕСЂСѓ Сѓ РіРµРѕРјРµС‚СЂРёС‡РЅС–Р№ РїСЂРѕРіСЂРµСЃС–С— !!!\n";
+	cout << "РћРїС‚РёРјР°Р»СЊРЅС– РґРѕРІР¶РёРЅРё РїР°СЂРѕР»С–РІ - РґРѕ 3 СЃРёРјРІРѕР»С–РІ \n(С†Рµ 70300 Р·РЅР°С‡РµРЅСЊ РґР»СЏ 52 Р±СѓРєРІ)\nРќР°С‚РёСЃРЅС–С‚СЊ Enter РґР»СЏ РїРѕС‡Р°С‚РєСѓ РїС–РґР±РѕСЂСѓ\n";
 	_getch();
 	brfs->TryToCatchPass();
 

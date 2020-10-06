@@ -17,7 +17,7 @@ class NegativeInt {
 		{
 			if (!isdigit(var) && var != '-')
 			{
-				cout << "\nÏîìèëêà. ×èñëî íå ö³ëå â³ä'ºìíå\n";
+				cout << "\nÐŸÐ¾Ð¼Ð¸Ð»ÐºÐ°. Ð§Ð¸ÑÐ»Ð¾ Ð½Ðµ Ñ†Ñ–Ð»Ðµ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ðµ\n";
 				return false;
 			}
 		}
@@ -26,7 +26,7 @@ class NegativeInt {
 		
 		if (value < 0 && value > MININT32) {
 			return true;
-		} cout << "\nÏîìèëêà. ×èñëî íå â³ä'ºìíå\n";
+		} cout << "\nÐŸÐ¾Ð¼Ð¸Ð»ÐºÐ°. Ð§Ð¸ÑÐ»Ð¾ Ð½Ðµ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ðµ\n";
 		return false;
 	}
 
@@ -36,13 +36,13 @@ public:
 		return num;
 	}
 	NegativeInt() {
-		cout << "\nÂâåä³òü ÷èñëî: ";
+		cout << "\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		while (true) if (input()) break;
 	}
 	NegativeInt(int num) {
 		if (isNegative(num))this->num = num;
 		else
-			cout << "\n×èñëî çì³íåíî íà ïðîòèëåæíå: ";
+			cout << "\nÐ§Ð¸ÑÐ»Ð¾ Ð·Ð¼Ñ–Ð½ÐµÐ½Ð¾ Ð½Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð»ÐµÐ¶Ð½Ðµ: ";
 			this->num = -num;
 			cout <<" "<< this->num;
 	}
@@ -60,7 +60,7 @@ public:
 };
 template <typename T, typename T2>
 void PrettyPrint(T f1, T2 f2) {
-	cout << "×èñëî "<<(f2 ? "" : "íå ") << "â³ä'ºìíå: " << "[" << f1 << "]" << (f2 ? "TRUE" : "FALSE") << endl<<endl;
+	cout << "Ð§Ð¸ÑÐ»Ð¾ "<<(f2 ? "" : "Ð½Ðµ ") << "Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ðµ: " << "[" << f1 << "]" << (f2 ? "TRUE" : "FALSE") << endl<<endl;
 }
 int main() {
 	SetConsoleOutputCP(1251);

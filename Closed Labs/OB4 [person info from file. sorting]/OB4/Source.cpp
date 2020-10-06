@@ -6,7 +6,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-/*Генератор випадкових стрічок і чисел*/
+/*Р“РµРЅРµСЂР°С‚РѕСЂ РІРёРїР°РґРєРѕРІРёС… СЃС‚СЂС–С‡РѕРє С– С‡РёСЃРµР»*/
 char* gen_random(bool withAlfa,const int len) {
 	char* alphanum = ((!withAlfa)?
 		"0123456789": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
@@ -17,12 +17,12 @@ char* gen_random(bool withAlfa,const int len) {
 	s[len] = 0;
 	return s;
 }
-/*Клас який представляє об'єкти з ПІБ, номером та адесою*/
+/*РљР»Р°СЃ СЏРєРёР№ РїСЂРµРґСЃС‚Р°РІР»СЏС” РѕР±'С”РєС‚Рё Р· РџР†Р‘, РЅРѕРјРµСЂРѕРј С‚Р° Р°РґРµСЃРѕСЋ*/
 class Person {
 	string name, number,adr;
-	static int currentSize; /*Розмір масиву з  об'єктами*/
+	static int currentSize; /*Р РѕР·РјС–СЂ РјР°СЃРёРІСѓ Р·  РѕР±'С”РєС‚Р°РјРё*/
 public:
-	/*Коструктори*/
+	/*РљРѕСЃС‚СЂСѓРєС‚РѕСЂРё*/
 	Person() {}
 	Person(string name, string number,string adr) {
 		this->name = name;
@@ -36,7 +36,7 @@ public:
 		this->adr = adr;
 		currentSize++;
 	}
-	/*Методи повернення значень закритих полів*/
+	/*РњРµС‚РѕРґРё РїРѕРІРµСЂРЅРµРЅРЅСЏ Р·РЅР°С‡РµРЅСЊ Р·Р°РєСЂРёС‚РёС… РїРѕР»С–РІ*/
 	string GetNumber() {
 		return this->number;
 	}
@@ -46,20 +46,20 @@ public:
 	string GetAdr() {
 		return this->adr;
 	}
-	/*Перевантаження операторів для порівняння об'єктів за номером*/
+	/*РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂС–РІ РґР»СЏ РїРѕСЂС–РІРЅСЏРЅРЅСЏ РѕР±'С”РєС‚С–РІ Р·Р° РЅРѕРјРµСЂРѕРј*/
 	bool operator>(Person&b) {
 		return (atoll(this->number.c_str())> atoll(b.number.c_str()));
 	}
 	bool operator==(Person&b) {
 		return (atoll(this->number.c_str())> atoll(b.number.c_str()));
 	}
-	/*Повернення розміру масиву з об'єктами*/
+	/*РџРѕРІРµСЂРЅРµРЅРЅСЏ СЂРѕР·РјС–СЂСѓ РјР°СЃРёРІСѓ Р· РѕР±'С”РєС‚Р°РјРё*/
 	static int GetSize() {
 		return currentSize;
 	}
-	/*Сортування об'єктів
-	По суті цей метод взятий з попередньої лабки
-	Змінено тільки прототип функції	*/
+	/*РЎРѕСЂС‚СѓРІР°РЅРЅСЏ РѕР±'С”РєС‚С–РІ
+	РџРѕ СЃСѓС‚С– С†РµР№ РјРµС‚РѕРґ РІР·СЏС‚РёР№ Р· РїРѕРїРµСЂРµРґРЅСЊРѕС— Р»Р°Р±РєРё
+	Р—РјС–РЅРµРЅРѕ С‚С–Р»СЊРєРё РїСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–С—	*/
 	static void Sort(Person *a) {
 		for (int i = 1; i <currentSize; i++)
 		{
@@ -76,8 +76,8 @@ public:
 	}
 };
 
-int Person::currentSize = 0; //Початковий розмір
-/*Читання файлу та створення об'єктів*/
+int Person::currentSize = 0; //РџРѕС‡Р°С‚РєРѕРІРёР№ СЂРѕР·РјС–СЂ
+/*Р§РёС‚Р°РЅРЅСЏ С„Р°Р№Р»Сѓ С‚Р° СЃС‚РІРѕСЂРµРЅРЅСЏ РѕР±'С”РєС‚С–РІ*/
 Person * FileOpen() {
 	ifstream inp("./test.txt");
 	vector<string> str;
@@ -100,7 +100,7 @@ Person * FileOpen() {
 	}
 	return a;
 }
-/*Якщо файл не існує то він сворюється тут*/
+/*РЇРєС‰Рѕ С„Р°Р№Р» РЅРµ С–СЃРЅСѓС” С‚Рѕ РІС–РЅ СЃРІРѕСЂСЋС”С‚СЊСЃСЏ С‚СѓС‚*/
 void WriteTest()
 {
 	ofstream of("./test.txt", ios_base::out);
@@ -109,7 +109,7 @@ void WriteTest()
 	}of << "\n";
 	of.close();
 }
-/*Вивід масиву об'єктів*/
+/*Р’РёРІС–Рґ РјР°СЃРёРІСѓ РѕР±'С”РєС‚С–РІ*/
 void PrintAll(Person *a) {
 	for (int i = 0; i < a->GetSize(); i++) {
 		cout <<"["<<i+1<<"] "<< a[i].GetName() << " " << a[i].GetNumber() << " " << a[i].GetAdr() << endl;
@@ -121,11 +121,11 @@ int main() {
 
 	WriteTest();
 	Person *a = FileOpen();
-	cout << "Об'єктів знайдено: "<< a->GetSize() << endl;
-	cout << "Об'єкти з файлу: " << endl;
+	cout << "РћР±'С”РєС‚С–РІ Р·РЅР°Р№РґРµРЅРѕ: "<< a->GetSize() << endl;
+	cout << "РћР±'С”РєС‚Рё Р· С„Р°Р№Р»Сѓ: " << endl;
 	PrintAll(a);
 	Person::Sort(a);
-	cout << "Відсортоване: " << endl;
+	cout << "Р’С–РґСЃРѕСЂС‚РѕРІР°РЅРµ: " << endl;
 	PrintAll(a);
 
 	_getch();

@@ -13,9 +13,9 @@ long long Cut(int k,long long n) {
 
 int main() {
 	SetConsoleOutputCP(1251);
-	int x,k; cout << "Ââåä³òü ÷èñëî: ";
+	int x,k; cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	cin >> x;
-	cout << "Ââåä³òü Ê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ðš: ";
 	cin >> k;
 	cout << Cut(k,x);
 	_getch();

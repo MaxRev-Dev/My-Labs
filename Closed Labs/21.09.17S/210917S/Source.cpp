@@ -25,7 +25,7 @@ public:
 	void setMatrix(int rows, int colls) {
 		vector<vector<int>> retVal(colls, vector<int>(rows));
 		for (int i = 0; i < colls; i++) {			
-			cout << "Ðÿäîê " << (i == colls-1 ? "îñòàíí³é" : static_cast<ostringstream*>(&(ostringstream() << i+1))->str())<<":" << endl;
+			cout << "Ð ÑÐ´Ð¾Ðº " << (i == colls-1 ? "Ð¾ÑÑ‚Ð°Ð½Ð½Ñ–Ð¹" : static_cast<ostringstream*>(&(ostringstream() << i+1))->str())<<":" << endl;
 			for (int j = 0; j < rows; j++) {
 				cin >> retVal[i][j];
 			}
@@ -121,7 +121,7 @@ public:
 			return x;
 		}
 		else {
-			cout << "\nÏîìèëêà: Ê³ëüê³ñòü ñòîâïö³â À != ê³ëüêîñò³ ðÿäê³â Â !!!\n";
+			cout << "\nÐŸÐ¾Ð¼Ð¸Ð»ÐºÐ°: ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÑÑ‚Ð¾Ð²Ð¿Ñ†Ñ–Ð² Ð != ÐºÑ–Ð»ÑŒÐºÐ¾ÑÑ‚Ñ– Ñ€ÑÐ´ÐºÑ–Ð² Ð’ !!!\n";
 			x.setMatrix(Matrix::getQuadIdentity(1));
 			return x;
 		}
@@ -131,26 +131,26 @@ public:
 
 void PrettyPrintQuad(Matrix *x,int id) {
 	if (x[id].isQuad()) {
-		cout << "-------\nÌàòðèöÿ êâàäðàòíà" << endl;
+		cout << "-------\nÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ð°" << endl;
 	//x.printMatrix();
 		cout << "-------\n";
 	}
 	else {
-		cout << "Ìàòðèöÿ íå êâàäðàòíà" << endl;
+		cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ Ð½Ðµ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ð°" << endl;
 	}
 }
 void PrettyPrintIndent(Matrix*x, int id){
 	if (x[id].isIdentity()) {
-		cout << "-------\nÌàòðèöÿ îäèíè÷íà" << endl;
+		cout << "-------\nÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ Ð¾Ð´Ð¸Ð½Ð¸Ñ‡Ð½Ð°" << endl;
 		//x.printMatrix();
 		cout << "-------\n";
 	}
 	else {
-		cout << "Ìàòðèöÿ íå îäèíè÷íà" << endl;
+		cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ Ð½Ðµ Ð¾Ð´Ð¸Ð½Ð¸Ñ‡Ð½Ð°" << endl;
 	}
 }
 void PrettyPrintMatrix(Matrix *x, int id) {
-	cout << "-------\nÌàòðèöÿ:" << endl;
+	cout << "-------\nÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ:" << endl;
 	x[id].printMatrix();
 	cout << "-------\n";
 }
@@ -164,14 +164,14 @@ int main()
 	PrettyPrintQuad(x,0);
 	PrettyPrintIndent(x,0);
 	int colls, rows;
-	cout << "\n\nÂâåä³òü ê³ëüê³ñòü ñòîâïö³â òà ðÿäê³â À:\n";
+	cout << "\n\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÑÑ‚Ð¾Ð²Ð¿Ñ†Ñ–Ð² Ñ‚Ð° Ñ€ÑÐ´ÐºÑ–Ð² Ð:\n";
 	cin >> colls>>rows ;
 	x[0].setMatrix(colls,rows);
 	PrettyPrintMatrix(x, 0);
 	PrettyPrintQuad(x, 0);
 	PrettyPrintIndent(x, 0);
 
-	cout << "\n\nÂâåä³òü ê³ëüê³ñòü ñòîâïö³â òà ðÿäê³â B:\n";
+	cout << "\n\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÑÑ‚Ð¾Ð²Ð¿Ñ†Ñ–Ð² Ñ‚Ð° Ñ€ÑÐ´ÐºÑ–Ð² B:\n";
 	cin >> colls >> rows;
 	x[1].setMatrix(colls, rows);
 	PrettyPrintMatrix(x,1);
@@ -179,13 +179,13 @@ int main()
 	PrettyPrintIndent(x,1);
 
 	x[2] = x[0]*x[1];
-	cout << "\nÌíîæåííÿ À * Â:\n";
+	cout << "\nÐœÐ½Ð¾Ð¶ÐµÐ½Ð½Ñ Ð * Ð’:\n";
 	PrettyPrintMatrix(x,2);
 	PrettyPrintQuad(x,2);
 	PrettyPrintIndent(x,2);
 
 	x[2] = x[0]+x[1];
-	cout << "\nÄîäàâàííÿ À + Â:\n";
+	cout << "\nÐ”Ð¾Ð´Ð°Ð²Ð°Ð½Ð½Ñ Ð + Ð’:\n";
 	PrettyPrintMatrix(x,2);
 	PrettyPrintQuad(x,2);
 	PrettyPrintIndent(x,2);

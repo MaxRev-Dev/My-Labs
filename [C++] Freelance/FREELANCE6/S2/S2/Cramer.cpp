@@ -7,7 +7,7 @@
 
 using namespace std;
 
-/* ����� �������*/
+/* Ð ÑšÐ ÂµÐ¡â€šÐ Ñ•Ð Ò‘ Ð Ñ™Ð¡Ð‚Ð Â°Ð Ñ˜Ð ÂµÐ¡Ð‚Ð Â°*/
 double* SolveCramer(SquareMatrix A, double det_A, double *b) {
 	double *ret = new double[A.size];
 	for (int i = 0; i < A.size; ++i) {

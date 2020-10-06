@@ -15,7 +15,7 @@ class PositiveIns {
 		{
 			if (!isdigit(var))
 			{
-				cout << "\nÏîìèëêà. ×èñëî íå ö³ëå äîäàòíº INT\n";
+				cout << "\nÐŸÐ¾Ð¼Ð¸Ð»ÐºÐ°. Ð§Ð¸ÑÐ»Ð¾ Ð½Ðµ Ñ†Ñ–Ð»Ðµ Ð´Ð¾Ð´Ð°Ñ‚Ð½Ñ” INT\n";
 				return false;
 			}
 		}
@@ -30,13 +30,13 @@ public:
 		return number;
 	}
 	PositiveIns() {
-		cout << "\nÂâåä³òü ÷èñëî: ";
+		cout << "\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		while (true) if (input()) break;
 	}
 	PositiveIns(int num) {
 		if (isPositive(num))this->number = num;
 		else {
-			cout << "\n×èñëî çì³íåíî íà ïðîòèëåæíå: ";
+			cout << "\nÐ§Ð¸ÑÐ»Ð¾ Ð·Ð¼Ñ–Ð½ÐµÐ½Ð¾ Ð½Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð»ÐµÐ¶Ð½Ðµ: ";
 			this->number = -num;
 		}
 		cout << " " << this->number;
@@ -69,7 +69,7 @@ public:
 };
 template <typename T, typename T2>
 void Show(T f1, T2 f2) {
-	cout << "\n×èñëî " << (f2 ? "" : "íå ") << "äîäàòíº: " << "[" << f1 << "]" << (f2 ? "TRUE" : "FALSE") << endl << endl;
+	cout << "\nÐ§Ð¸ÑÐ»Ð¾ " << (f2 ? "" : "Ð½Ðµ ") << "Ð´Ð¾Ð´Ð°Ñ‚Ð½Ñ”: " << "[" << f1 << "]" << (f2 ? "TRUE" : "FALSE") << endl << endl;
 }
 int main() {
 	SetConsoleOutputCP(1251);

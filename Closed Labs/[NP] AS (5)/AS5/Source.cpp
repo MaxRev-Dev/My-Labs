@@ -42,16 +42,16 @@ public:
 		for (size_t i = 0; i < obj->size(); i++) {
 			if (obj->at(i).tel.find(query)!=string::npos) {
 				auto a = obj->at(i);
-				cout << "\nÇíàéäåíî: #" << i + 1 <<"\n²ì'ÿ: "<< a.name.c_str() << 
-					"\nÒåë.: " << a.tel<<"\nÀäðåñà: "<<a.adr.c_str()<<endl;
+				cout << "\nÐ—Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾: #" << i + 1 <<"\nÐ†Ð¼'Ñ: "<< a.name.c_str() << 
+					"\nÐ¢ÐµÐ».: " << a.tel<<"\nÐÐ´Ñ€ÐµÑÐ°: "<<a.adr.c_str()<<endl;
 			}
 		}
 	}
 	void ShowAll() {
 		for (size_t i = 0; i < obj->size(); i++) {
 			auto a = obj->at(i);
-			cout <<"#"<< i + 1 << "\t²ì'ÿ: " << a.name.c_str() <<
-				"\tÒåë.: " << a.tel.c_str() << "\tÀäðåñà: " << a.adr.c_str() << endl;
+			cout <<"#"<< i + 1 << "\tÐ†Ð¼'Ñ: " << a.name.c_str() <<
+				"\tÐ¢ÐµÐ».: " << a.tel.c_str() << "\tÐÐ´Ñ€ÐµÑÐ°: " << a.adr.c_str() << endl;
 		}
 		cout << endl;
 	}
@@ -94,21 +94,21 @@ int main() {
 	RefBook *b = new RefBook();
 	b->ShowAll();
 	string str;
-	cout << "Ââåä³òü ïîøóêîâèé çàïèò ïî íîìåðó: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿Ð¾ÑˆÑƒÐºÐ¾Ð²Ð¸Ð¹ Ð·Ð°Ð¿Ð¸Ñ‚ Ð¿Ð¾ Ð½Ð¾Ð¼ÐµÑ€Ñƒ: ";
 	getline(cin, str);
 	b->Seach(str);
 
 	Item*it = new Item;
-	cout << "Ââåä³òü ³ì'ÿ íîâîãî çàïèñó: ";	getline(cin, it->name);
-	cout << "Ââåä³òü òåëåôîí: "; getline(cin, it->tel); 
-	cout << "Ââåä³òü àäðåñó: "; getline(cin, it->adr);
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ–Ð¼'Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ð¸ÑÑƒ: ";	getline(cin, it->name);
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½: "; getline(cin, it->tel); 
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð°Ð´Ñ€ÐµÑÑƒ: "; getline(cin, it->adr);
 	b->Add(*it); delete it;
 
 	b->SaveToFile();
-	cout << "\nÊíèãó çáåðåæåíî\n";
+	cout << "\nÐšÐ½Ð¸Ð³Ñƒ Ð·Ð±ÐµÑ€ÐµÐ¶ÐµÐ½Ð¾\n";
 	b->DeleteAll();
 	b->OpenDB();
-	cout << "\nÇàïèñè çàâàíòàæåíî\n";
+	cout << "\nÐ—Ð°Ð¿Ð¸ÑÐ¸ Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶ÐµÐ½Ð¾\n";
 	b->ShowAll();
 
 	delete b;

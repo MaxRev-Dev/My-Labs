@@ -30,12 +30,12 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	string a, b;
-	cout << "Ââåä³òü ïåðøèé ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿ÐµÑ€ÑˆÐ¸Ð¹ Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, a);
-	cout << "Ââåä³òü äðóãèé ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð´Ñ€ÑƒÐ³Ð¸Ð¹ Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, b);
 	xstring p = xstring(a)*xstring(b);
-	cout << "Îäíàêîâ³ ñèìâîëè: " << p << endl;
+	cout << "ÐžÐ´Ð½Ð°ÐºÐ¾Ð²Ñ– ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¸: " << p << endl;
 	_getch();
 
 	return 0;

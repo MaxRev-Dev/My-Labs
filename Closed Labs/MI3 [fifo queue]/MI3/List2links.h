@@ -6,7 +6,7 @@
 
 /*	
 		2 Linked List
-	Copyright � MaxRev 2017
+	Copyright В© MaxRev 2017
 	  All rights reserved
 */
 template <typename T>
@@ -126,6 +126,6 @@ public:
 };
 
 /*
-	Copyright � MaxRev 2017
+	Copyright В© MaxRev 2017
 	  All rights reserved
 */

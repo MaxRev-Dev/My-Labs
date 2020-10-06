@@ -62,7 +62,7 @@ void ReplaceLocalMinMax(int **m, int size) {
 int main() {
 	SetConsoleOutputCP(1251);
 	int size;
-	cout << "Ââåä³òü ðîçì³ð ìàòðèö³ äëÿ ãåíåðóâàíÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€Ð¾Ð·Ð¼Ñ–Ñ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ– Ð´Ð»Ñ Ð³ÐµÐ½ÐµÑ€ÑƒÐ²Ð°Ð½Ñ: ";
 	cin >> size;
 	int **m = new int*[size];
 	for (int i = 0; i < size; i++) {

@@ -4,7 +4,7 @@
 #include <iomanip>
 using namespace std;
 
-//Звичайне сортування "бульбашкою"
+//Р—РІРёС‡Р°Р№РЅРµ СЃРѕСЂС‚СѓРІР°РЅРЅСЏ "Р±СѓР»СЊР±Р°С€РєРѕСЋ"
 template <typename T>
 void sortCust(T*a,int  size) {
 	for (int i = 0; i <size; i++)
@@ -21,7 +21,7 @@ void sortCust(T*a,int  size) {
 	}
 }
 
-//Визначення для стрічок з методом size()
+//Р’РёР·РЅР°С‡РµРЅРЅСЏ РґР»СЏ СЃС‚СЂС–С‡РѕРє Р· РјРµС‚РѕРґРѕРј size()
 template <typename T>
 void sortCustS(T*a, int  size) {
 	for (int i = 0; i <size; i++)
@@ -38,7 +38,7 @@ void sortCustS(T*a, int  size) {
 	}
 }
 
-//Форматований вивід через розділювач endline
+//Р¤РѕСЂРјР°С‚РѕРІР°РЅРёР№ РІРёРІС–Рґ С‡РµСЂРµР· СЂРѕР·РґС–Р»СЋРІР°С‡ endline
 template <typename T>
 void sortAndPrint(T *arr, int size, char endline) {
 	sortCust(arr, size-1);
@@ -47,7 +47,7 @@ void sortAndPrint(T *arr, int size, char endline) {
 	}cout << endl;
 }
 
-//Стрічки виводимо через метод с_str()
+//РЎС‚СЂС–С‡РєРё РІРёРІРѕРґРёРјРѕ С‡РµСЂРµР· РјРµС‚РѕРґ СЃ_str()
 template <typename T>
 void sortAndPrintS(T *arr, int size, char endline) {
 	sortCustS(arr, size - 1);
@@ -56,7 +56,7 @@ void sortAndPrintS(T *arr, int size, char endline) {
 	}cout << endl;
 }
 
-//Визначення виводу для класу XTypePoint
+//Р’РёР·РЅР°С‡РµРЅРЅСЏ РІРёРІРѕРґСѓ РґР»СЏ РєР»Р°СЃСѓ XTypePoint
 template <typename T>
 void sortAndPrintXTP(T *arr, int size) {
 	sortCust(arr, size - 1);
@@ -65,9 +65,9 @@ void sortAndPrintXTP(T *arr, int size) {
 	}cout << endl;
 }
 
-/*Свій клас який визначає положення
-	точки на екрані наприклад
-Сортування визначає найбільшу суму координат 
+/*РЎРІС–Р№ РєР»Р°СЃ СЏРєРёР№ РІРёР·РЅР°С‡Р°С” РїРѕР»РѕР¶РµРЅРЅСЏ
+	С‚РѕС‡РєРё РЅР° РµРєСЂР°РЅС– РЅР°РїСЂРёРєР»Р°Рґ
+РЎРѕСЂС‚СѓРІР°РЅРЅСЏ РІРёР·РЅР°С‡Р°С” РЅР°Р№Р±С–Р»СЊС€Сѓ СЃСѓРјСѓ РєРѕРѕСЂРґРёРЅР°С‚ 
 */
 class XTypePoint {
 private:
@@ -79,7 +79,7 @@ public:
 		x = X;
 		y = Y;
 	}
-	// Визначення оператора порівняння
+	// Р’РёР·РЅР°С‡РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° РїРѕСЂС–РІРЅСЏРЅРЅСЏ
 	bool operator>(XTypePoint&rt) {
 		return (this->x+this->y)/2 > (rt.x + rt.y)/2;
 	}

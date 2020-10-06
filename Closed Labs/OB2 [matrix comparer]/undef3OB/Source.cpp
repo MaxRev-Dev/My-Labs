@@ -16,17 +16,17 @@ public:
 		for (int i = 0; i < _size; i++) {
 			for (int j = 0; j < _size; j++) {
 				if (M1[i][j] != M2[i][j]) {
-					cout << "Ìàòðèö³ íå îäíàêîâ³" << endl; return;
+					cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ– Ð½Ðµ Ð¾Ð´Ð½Ð°ÐºÐ¾Ð²Ñ–" << endl; return;
 				}
 			}
 		}
-		cout << "Ìàòðèö³ ³äåíòè÷í³" << endl;
+		cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ– Ñ–Ð´ÐµÐ½Ñ‚Ð¸Ñ‡Ð½Ñ–" << endl;
 	}
 }; 
 int size;
 int** CreateMatrix() {
 	int**m;
-	if (::size > 5) { cout << "Ìàòðèöÿ çàâåëèêà äëÿ ââåäåííÿ\n"; return 0; }
+	if (::size > 5) { cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ Ð·Ð°Ð²ÐµÐ»Ð¸ÐºÐ° Ð´Ð»Ñ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ\n"; return 0; }
 	m = new int*[::size];
 	for (int i = 0; i < ::size; i++) {
 		m[i] = new int[::size];
@@ -40,11 +40,11 @@ int** CreateMatrix() {
 int main() {
 	SetConsoleOutputCP(1251);
 	int **m1, **m2;
-	cout << "Ââåä³òü ðîçì³ð êâàäðàòíî¿ ìàòðèö³: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€Ð¾Ð·Ð¼Ñ–Ñ€ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ð¾Ñ— Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ–: ";
 	cin >> ::size;
-	cout << "Ââåä³òü ïåðøó ìàòðèöþ:\n";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿ÐµÑ€ÑˆÑƒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†ÑŽ:\n";
 	m1 = CreateMatrix();
-	cout << "Ââåä³òü äðóãó ìàòðèöþ:\n";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð´Ñ€ÑƒÐ³Ñƒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†ÑŽ:\n";
 	m2 = CreateMatrix();
 	MatrixComparer *cmp = new MatrixComparer(m1, m2,::size);
 	cmp->ShowResult();

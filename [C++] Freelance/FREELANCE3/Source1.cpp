@@ -44,14 +44,14 @@ void WriteToFile(Item*all, int count) {
 
 char* checkInp(int count, bool num) {
 	
-	string str;  // очищення буфера вводу у разі помилок
-	if (num) { // для чисел
-		getline(cin, str); // ввід у строку
-		if (atoi(str.c_str()) == 0||str.length()>count) { // якщо це не число 
-			cout << "\nПомилка: неправильний ввід. Повторіть спробу\n";
+	string str;  // РѕС‡РёС‰РµРЅРЅСЏ Р±СѓС„РµСЂР° РІРІРѕРґСѓ Сѓ СЂР°Р·С– РїРѕРјРёР»РѕРє
+	if (num) { // РґР»СЏ С‡РёСЃРµР»
+		getline(cin, str); // РІРІС–Рґ Сѓ СЃС‚СЂРѕРєСѓ
+		if (atoi(str.c_str()) == 0||str.length()>count) { // СЏРєС‰Рѕ С†Рµ РЅРµ С‡РёСЃР»Рѕ 
+			cout << "\nРџРѕРјРёР»РєР°: РЅРµРїСЂР°РІРёР»СЊРЅРёР№ РІРІС–Рґ. РџРѕРІС‚РѕСЂС–С‚СЊ СЃРїСЂРѕР±Сѓ\n";
 			
 			return checkInp(count, num); 
-			//рекурсивно дістаємо відповідь, поки не буде правильна)
+			//СЂРµРєСѓСЂСЃРёРІРЅРѕ РґС–СЃС‚Р°С”РјРѕ РІС–РґРїРѕРІС–РґСЊ, РїРѕРєРё РЅРµ Р±СѓРґРµ РїСЂР°РІРёР»СЊРЅР°)
 		}
 	}
 	else {
@@ -64,46 +64,46 @@ char* checkInp(int count, bool num) {
 	return buff;
 }
 
-int count; // глобальна змінна розміру бази
+int count; // РіР»РѕР±Р°Р»СЊРЅР° Р·РјС–РЅРЅР° СЂРѕР·РјС–СЂСѓ Р±Р°Р·Рё
 Item* InputItems() {
-	cout << "Кількість працівників для запису у файл: ";
+	cout << "РљС–Р»СЊРєС–СЃС‚СЊ РїСЂР°С†С–РІРЅРёРєС–РІ РґР»СЏ Р·Р°РїРёСЃСѓ Сѓ С„Р°Р№Р»: ";
 	cin >> ::count; cin.get();
-	Item *all = new Item[::count]; // нова база
+	Item *all = new Item[::count]; // РЅРѕРІР° Р±Р°Р·Р°
 	for (int i = 0; i < ::count; i++) {	
-		cout << endl << "Працівник " << i + 1 << endl;
-		cout << "Введіть код підпpиємства [5]: ";
+		cout << endl << "РџСЂР°С†С–РІРЅРёРє " << i + 1 << endl;
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ РїС–РґРїpРёС”РјСЃС‚РІР° [5]: ";
 		all[i].entertp_code = checkInp(5,true);
-		cout << "Введіть код цеху [2]: ";
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ С†РµС…Сѓ [2]: ";
 		all[i].shop_code = checkInp(2, true);
-		cout << "Введіть табельний номеp пpацівника [4]: ";
+		cout << "Р’РІРµРґС–С‚СЊ С‚Р°Р±РµР»СЊРЅРёР№ РЅРѕРјРµp РїpР°С†С–РІРЅРёРєР° [4]: ";
 		all[i].empl_num = checkInp(4, true);
-		cout << "Введіть пpізвище пpацівника [30]: ";
-		all[i].empl_surn = checkInp(30, false);// тут має бути слово
-		cout << "Введіть рік наpодження [4]:";
+		cout << "Р’РІРµРґС–С‚СЊ РїpС–Р·РІРёС‰Рµ РїpР°С†С–РІРЅРёРєР° [30]: ";
+		all[i].empl_surn = checkInp(30, false);// С‚СѓС‚ РјР°С” Р±СѓС‚Рё СЃР»РѕРІРѕ
+		cout << "Р’РІРµРґС–С‚СЊ СЂС–Рє РЅР°pРѕРґР¶РµРЅРЅСЏ [4]:";
 		all[i].b_date = checkInp(4, true);
-		cout << "Введіть код національності [2]: ";
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ РЅР°С†С–РѕРЅР°Р»СЊРЅРѕСЃС‚С– [2]: ";
 		all[i].nat_code = checkInp(2, true);
 
-		cout << "Введіть сімейний стан [1] 1/0: ";		
+		cout << "Р’РІРµРґС–С‚СЊ СЃС–РјРµР№РЅРёР№ СЃС‚Р°РЅ [1] 1/0: ";		
 		int ism;
 		cin >> ism; cin.get();
 		all[i].maried =new char[2];			
 		all[i].maried[0] = (ism == 0) ? '0' : '1';
 		all[i].maried[1] = '\0';
 
-		cout << "Введіть стаж pоботи загальний [2]: ";
+		cout << "Р’РІРµРґС–С‚СЊ СЃС‚Р°Р¶ pРѕР±РѕС‚Рё Р·Р°РіР°Р»СЊРЅРёР№ [2]: ";
 		all[i].all_exp = checkInp(2, true);
-		cout << "Введіть стаж pоботи непеpеpвний [2]: ";
+		cout << "Р’РІРµРґС–С‚СЊ СЃС‚Р°Р¶ pРѕР±РѕС‚Рё РЅРµРїРµpРµpРІРЅРёР№ [2]: ";
 		all[i].unnint_exp = checkInp(2, true);
-		cout << "Введіть код пpофесії [4]: ";
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕРґ РїpРѕС„РµСЃС–С— [4]: ";
 		all[i].prof_code = checkInp(4, true);
 
-		cout << "Введіть розpяд [1]: "; 
+		cout << "Р’РІРµРґС–С‚СЊ СЂРѕР·pСЏРґ [1]: "; 
 		cin >> ism; cin.get();
 		char*buff = new char[5]; itoa(ism, buff, 10);
 		all[i]._class = buff;
 
-		cout << "Введіть оклад [float]: ";
+		cout << "Р’РІРµРґС–С‚СЊ РѕРєР»Р°Рґ [float]: ";
 		cin >> all[i].salary; cin.get(); cout << endl;
 	}
 	return all;
@@ -114,7 +114,7 @@ int main() {
 	SetConsoleCP(1251);
 	Item*all_items = InputItems();
 	WriteToFile(all_items, ::count);
-	cout << "\nФайл записано та збережено, як data.dat\n";
+	cout << "\nР¤Р°Р№Р» Р·Р°РїРёСЃР°РЅРѕ С‚Р° Р·Р±РµСЂРµР¶РµРЅРѕ, СЏРє data.dat\n";
 	_getch();
 	return 0;
 }

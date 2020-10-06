@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//«‡‰‡˜‡ 4
+//–ó–∞–¥–∞—á–∞ 4
 void CorrectPrint(const Item p) {
 	cout <<
 		"\n| [1]" << setw(5) << p.fcode << setw(5) << "| [2]" << setw(5) <<
@@ -24,62 +24,62 @@ void CorrectItems(vector<Item> *v) {
 	while (true)
 	{
 		PrintAll(*v);
-		cout << "¬‚Â‰≥Ú¸ ÌÓÏÂ Á‡ÔËÒÛ ‰Îˇ ÍÓË„Û‚‡ÌÌˇ (-1 ‚≥‰Ï≥Ì‡): ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–º–µ—Ä –∑–∞–ø–∏—Å—É –¥–ª—è –∫–æ—Ä–∏–≥—É–≤–∞–Ω–Ω—è (-1 –≤—ñ–¥–º—ñ–Ω–∞): ";
 		int x, y;  cin >> x; cin.get();
 		if (x == -1) break;
 		Item tmp = v->at(x - 1);
 		while (true)
 		{
-			cout << "¬‚Â‰≥Ú¸ ÌÓÏÂ ÔÓÎˇ ‰Îˇ ÍÓË„Û‚‡ÌÌˇ (-1 ‚≥‰Ï≥Ì‡): ";
+			cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–º–µ—Ä –ø–æ–ª—è –¥–ª—è –∫–æ—Ä–∏–≥—É–≤–∞–Ω–Ω—è (-1 –≤—ñ–¥–º—ñ–Ω–∞): ";
 			CorrectPrint(tmp);
 			cin >> y; cin.get();
 			if (x == -1) break;
-			cout << ">> –Â‰‡„Û∫ÏÓ ";
+			cout << ">> –†–µ–¥–∞–≥—É—î–º–æ ";
 			switch (y)
 			{
 			case 1: {
-				cout << "ÍÓ‰ Ù‡ÍÛÎ¸ÚÂÚÛ: "; cin >> tmp.fcode; cin.get();
+				cout << "–∫–æ–¥ —Ñ–∞–∫—É–ª—å—Ç–µ—Ç—É: "; cin >> tmp.fcode; cin.get();
 				break;
 			}
 			case 2: {
-				cout << "ÍÓ‰ ÒÔÂˆ≥‡Î¸ÌÓÒÚ≥: "; cin >> tmp.scode; cin.get();
+				cout << "–∫–æ–¥ —Å–ø–µ—Ü—ñ–∞–ª—å–Ω–æ—Å—Ç—ñ: "; cin >> tmp.scode; cin.get();
 				break;
 			}
 			case 3: {
-				cout << "ÍÛÒ: "; cin >> tmp.course;
+				cout << "–∫—É—Ä—Å: "; cin >> tmp.course;
 				break;
 			}
 			case 4: {
-				cout << "„ÛÔÛ: "; cin >> tmp.group;
+				cout << "–≥—Ä—É–ø—É: "; cin >> tmp.group;
 				break;
 			}
 			case 5: {
-				cout << "ÍÓ‰ ‰ËÒˆËÔÎ≥ÌË: "; cin >> tmp.dpcode; cin.get();
+				cout << "–∫–æ–¥ –¥–∏—Å—Ü–∏–ø–ª—ñ–Ω–∏: "; cin >> tmp.dpcode; cin.get();
 				break;
 			}
 			case 6: {
-				cout << "Ô≥Á‚Ë˘Â ÒÚÛ‰ÂÌÚ‡: "; cin >> tmp.nick;
+				cout << "–ø—Ä—ñ–∑–≤–∏—â–µ —Å—Ç—É–¥–µ–Ω—Ç–∞: "; cin >> tmp.nick;
 				break;
 			}
 			case 7: {
-				cout << "ÌÓÏÂ Á‡Î.ÍÌ.: "; cin >> tmp.gradebook_id; cin.get();
+				cout << "–Ω–æ–º–µ—Ä –∑–∞–ª.–∫–Ω.: "; cin >> tmp.gradebook_id; cin.get();
 				break;
 			}
 			case 8: {
-				cout << "Óˆ≥ÌÍÛ: "; cin >> tmp.mark; cin.get();
+				cout << "–æ—Ü—ñ–Ω–∫—É: "; cin >> tmp.mark; cin.get();
 				break;
 			}
 			default:
 				break;
 			}
 			CorrectPrint(tmp);
-			cout << endl << "—ÍÓÂ„Û‚‡ÚË ˘Â ÔÓÎÂ [1/0]: ";
+			cout << endl << "–°–∫–æ—Ä–µ–≥—É–≤–∞—Ç–∏ —â–µ –ø–æ–ª–µ [1/0]: ";
 			int fg;  cin >> fg;	if (fg != 1) break;
 
 		}
 
 		v->at(x - 1) = tmp;
-		cout << endl << "—ÍÓÂ„Û‚‡ÚË ˘Â Á‡ÔËÒ [1/0]: ";
+		cout << endl << "–°–∫–æ—Ä–µ–≥—É–≤–∞—Ç–∏ —â–µ –∑–∞–ø–∏—Å [1/0]: ";
 		int fg;  cin >> fg;	if (fg != 1) break;
 	}
 }
@@ -87,7 +87,7 @@ void CorrectItems(vector<Item> *v) {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//Á‡‰‡˜‡ 4
+	//–∑–∞–¥–∞—á–∞ 4
 	auto f4 = ReadFile("./data.txt");
 	CorrectItems(f4);
 	WriteItems("./data.txt", *f4);

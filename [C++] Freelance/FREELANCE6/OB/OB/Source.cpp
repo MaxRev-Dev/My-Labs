@@ -8,16 +8,16 @@ using namespace std;
 int HexToInt(const char* str)
 {
 	int r;
-	// функція переведеня hex - int
-	// x - hex формат
+	// С„СѓРЅРєС†С–СЏ РїРµСЂРµРІРµРґРµРЅСЏ hex - int
+	// x - hex С„РѕСЂРјР°С‚
 	sscanf_s(str, "%x", &r); 
 	return r;
 }
-// перевірка на символи hex числа
+// РїРµСЂРµРІС–СЂРєР° РЅР° СЃРёРјРІРѕР»Рё hex С‡РёСЃР»Р°
 bool ishex(string str) {
 	string hex = "123456789abcdef";
 	for (int i= 0; i < str.length(); i++) {
-		//пошук у стрічці
+		//РїРѕС€СѓРє Сѓ СЃС‚СЂС–С‡С†С–
 		if (hex.find(str[i]) == string::npos) 
 			return false;
 	} 
@@ -27,17 +27,17 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	while (true) {
-		string str; cout << "Введіть число в HEX форматі: ";
+		string str; cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ РІ HEX С„РѕСЂРјР°С‚С–: ";
 		getline(cin, str); 
 		int num = MININT; 
 		
 		if (ishex(str)) { 
-			// число в порядку. конвертуємо..
-			num = HexToInt(str.c_str());			// остача ділення на 5 має бути 0
-			cout << "Число (OCT) " << num << " " << ((num % 5 == 0) ? "є" : "не є") << " кратним 5";
+			// С‡РёСЃР»Рѕ РІ РїРѕСЂСЏРґРєСѓ. РєРѕРЅРІРµСЂС‚СѓС”РјРѕ..
+			num = HexToInt(str.c_str());			// РѕСЃС‚Р°С‡Р° РґС–Р»РµРЅРЅСЏ РЅР° 5 РјР°С” Р±СѓС‚Рё 0
+			cout << "Р§РёСЃР»Рѕ (OCT) " << num << " " << ((num % 5 == 0) ? "С”" : "РЅРµ С”") << " РєСЂР°С‚РЅРёРј 5";
 		}
 		else {
-			cout << "Число не є шіснадцятковим";
+			cout << "Р§РёСЃР»Рѕ РЅРµ С” С€С–СЃРЅР°РґС†СЏС‚РєРѕРІРёРј";
 		} 
 		cout << endl<<endl;
 	}

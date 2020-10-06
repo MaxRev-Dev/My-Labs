@@ -8,9 +8,9 @@ using namespace std;
 int main() {
 	SetConsoleOutputCP(1251);
 	double a,b;
-	cout << "Ââåä³òü ÷èñåëüíèê äðîáó: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐµÐ»ÑŒÐ½Ð¸Ðº Ð´Ñ€Ð¾Ð±Ñƒ: ";
 	cin >> a;
-	cout << "Ââåä³òü çíàìåííèê äðîáó: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð·Ð½Ð°Ð¼ÐµÐ½Ð½Ð¸Ðº Ð´Ñ€Ð¾Ð±Ñƒ: ";
 	cin >> b;
 
 	double d = a / b;
@@ -22,8 +22,8 @@ int main() {
 			last = last.substr(0, i);
 		}
 	}
-	cout << "Ðåçóëüòàò: " << str<<endl;
-	cout << "Ïåð³îä äðîáó  = "<<last;
+	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << str<<endl;
+	cout << "ÐŸÐµÑ€Ñ–Ð¾Ð´ Ð´Ñ€Ð¾Ð±Ñƒ  = "<<last;
 
 	_getch();
 	return 0;

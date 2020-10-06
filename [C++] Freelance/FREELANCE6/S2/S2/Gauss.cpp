@@ -6,17 +6,17 @@
 
 using namespace std;
 
-/* Метод Гауса*/
+/* РњРµС‚РѕРґ Р“Р°СѓСЃР°*/
 double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 {
 	double *x, max, **a = A.elems;
 	int k, index, n = A.size;
-	const double eps = epsilon;  // точність
+	const double eps = epsilon;  // С‚РѕС‡РЅС–СЃС‚СЊ
 	x = new double[n];
 	k = 0;
 	while (k < n)
 	{
-		// Пошук рядка з максимальним a[i][k]
+		// РџРѕС€СѓРє СЂСЏРґРєР° Р· РјР°РєСЃРёРјР°Р»СЊРЅРёРј a[i][k]
 		max = abs(a[k][k]);
 		index = k;
 		for (int i = k + 1; i < n; i++)
@@ -25,12 +25,12 @@ double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 				max = abs(a[i][k]);
 				index = i;
 			}
-		// Перестановка рядків
+		// РџРµСЂРµСЃС‚Р°РЅРѕРІРєР° СЂСЏРґРєС–РІ
 		if (max < eps)
 		{
-			//немає нулювих діагональних елементів
-			cout << "Розв'язок неможливий через не нульовий стовчик ";
-			cout << index << " матриці A" << endl;
+			//РЅРµРјР°С” РЅСѓР»СЋРІРёС… РґС–Р°РіРѕРЅР°Р»СЊРЅРёС… РµР»РµРјРµРЅС‚С–РІ
+			cout << "Р РѕР·РІ'СЏР·РѕРє РЅРµРјРѕР¶Р»РёРІРёР№ С‡РµСЂРµР· РЅРµ РЅСѓР»СЊРѕРІРёР№ СЃС‚РѕРІС‡РёРє ";
+			cout << index << " РјР°С‚СЂРёС†С– A" << endl;
 			return 0;
 		}
 		for (int j = 0; j < n; j++)
@@ -42,22 +42,22 @@ double * SolveGauss(SquareMatrix A, double *y, double epsilon)
 		double temp = y[k];
 		y[k] = y[index];
 		y[index] = temp;
-		// Нормалізація рівнянь
+		// РќРѕСЂРјР°Р»С–Р·Р°С†С–СЏ СЂС–РІРЅСЏРЅСЊ
 		for (int i = k; i < n; i++)
 		{
 			double temp = a[i][k];
-			if (abs(temp) < eps) continue; // це нульвий тому пропускаємо
+			if (abs(temp) < eps) continue; // С†Рµ РЅСѓР»СЊРІРёР№ С‚РѕРјСѓ РїСЂРѕРїСѓСЃРєР°С”РјРѕ
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] / temp;
 			y[i] = y[i] / temp;
-			if (i == k)  continue; // це таке ж як і рахуємо зараз 
+			if (i == k)  continue; // С†Рµ С‚Р°РєРµ Р¶ СЏРє С– СЂР°С…СѓС”РјРѕ Р·Р°СЂР°Р· 
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] - a[k][j];
 			y[i] = y[i] - y[k];
 		}
 		k++;
 	}
-	// Зворотній хід
+	// Р—РІРѕСЂРѕС‚РЅС–Р№ С…С–Рґ
 	for (k = n - 1; k >= 0; k--)
 	{
 		x[k] = y[k];

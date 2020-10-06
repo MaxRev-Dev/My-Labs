@@ -9,7 +9,7 @@ bool checkIn(string s1) {
 	string base = "0123456789";
 	for (size_t i = 0; i < s1.length(); i++) {
 		if (s1[i] != base[i]) {
-			cout << "Òåêò íå ñï³âïàäàº ç â³äð³çêîì - íà ³íäåêñ³ [" << i << "]\n";
+			cout << "Ð¢ÐµÐºÑ‚ Ð½Ðµ ÑÐ¿Ñ–Ð²Ð¿Ð°Ð´Ð°Ñ” Ð· Ð²Ñ–Ð´Ñ€Ñ–Ð·ÐºÐ¾Ð¼ - Ð½Ð° Ñ–Ð½Ð´ÐµÐºÑÑ– [" << i << "]\n";
 			return false;
 		}
 	}
@@ -21,11 +21,11 @@ int main() {
 	SetConsoleOutputCP(1251);
 	while (true) {
 		string  input;
-		cout << "Ââåä³òü òåêñò: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‚ÐµÐºÑÑ‚: ";
 		getline(cin, input);
 
 		if (checkIn(input)) {
-			cout << "Òåêñò º ïî÷àòêîì â³äð³çêó\n";
+			cout << "Ð¢ÐµÐºÑÑ‚ Ñ” Ð¿Ð¾Ñ‡Ð°Ñ‚ÐºÐ¾Ð¼ Ð²Ñ–Ð´Ñ€Ñ–Ð·ÐºÑƒ\n";
 		}
 		_getch();
 	}
@@ -67,21 +67,21 @@ int main2() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	string inp;
-	cout << "Ââåä³òü ïîñë³äîâí³ñòü ÷åðåç ïðîá³ë ³ çàâåðø³òü íóëåì\n";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿Ð¾ÑÐ»Ñ–Ð´Ð¾Ð²Ð½Ñ–ÑÑ‚ÑŒ Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±Ñ–Ð» Ñ– Ð·Ð°Ð²ÐµÑ€ÑˆÑ–Ñ‚ÑŒ Ð½ÑƒÐ»ÐµÐ¼\n";
 	getline(cin, inp);
 
 	vector<string> sx = split(inp);
 	vector<int> v = Fibo(sx.size()-1);
-	cout << "Ââåäåí³ ÷èñëà: \n";
+	cout << "Ð’Ð²ÐµÐ´ÐµÐ½Ñ– Ñ‡Ð¸ÑÐ»Ð°: \n";
 	for (size_t i = 0; i < sx.size(); i++) {
 		cout << "[" << i + 1 << "]" << sx[i] << endl;
 	}cout << "\n\n";
 	int sum = 0;
 	for (size_t i = 0; i < v.size(); i++) {
-		cout << "Cóìóºìî ³íäåêñ " << v[i] << endl;
+		cout << "CÑƒÐ¼ÑƒÑ”Ð¼Ð¾ Ñ–Ð½Ð´ÐµÐºÑ " << v[i] << endl;
 		sum += atoi(sx[v[i]].c_str());
 	}
-	cout << "Ñóìà = "<< sum;
+	cout << "Ð¡ÑƒÐ¼Ð° = "<< sum;
 	_getch();
 	return 0;
 }

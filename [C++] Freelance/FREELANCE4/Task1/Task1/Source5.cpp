@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//Задача 5
+//Р—Р°РґР°С‡Р° 5
 void Min(int**m, int sizeN) {
 	int index;
 	for (int i = 0; i < sizeN; i++) {
@@ -43,7 +43,7 @@ void TestMaxrix() {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//задача 5
+	//Р·Р°РґР°С‡Р° 5
 	TestMaxrix();
 	_getch();
 	return 0;

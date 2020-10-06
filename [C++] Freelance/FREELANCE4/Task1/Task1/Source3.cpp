@@ -7,30 +7,30 @@
 #include "Item.h"
 
 using namespace std;
-//Çàäà÷à 3
+//Ð—Ð°Ð´Ð°Ñ‡Ð° 3
 vector<Item>* GetItems() {
 	vector<Item> *v = new vector<Item>();
 	while (true)
 	{
 		Item it;
-		cout << "Ââåä³òü êîä ôàêóëüòåòó: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÐ¾Ð´ Ñ„Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚Ñƒ: ";
 		cin >> it.fcode; cin.get();
-		cout << "Ââåä³òü êîä ñïåö³àëüíîñò³: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÐ¾Ð´ ÑÐ¿ÐµÑ†Ñ–Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ñ–: ";
 		cin >> it.scode; cin.get();
-		cout << "Ââåä³òü êóðñ: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑƒÑ€Ñ: ";
 		cin >> it.course;
-		cout << "Ââåä³òü ãðóïó: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð³Ñ€ÑƒÐ¿Ñƒ: ";
 		cin >> it.group;
-		cout << "Ââåä³òü êîä äèñöèïë³íè: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÐ¾Ð´ Ð´Ð¸ÑÑ†Ð¸Ð¿Ð»Ñ–Ð½Ð¸: ";
 		cin >> it.dpcode; cin.get();
-		cout << "Ââåä³òü ïð³çâèùå ñòóäåíòà: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿Ñ€Ñ–Ð·Ð²Ð¸Ñ‰Ðµ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 		cin >> it.nick;
-		cout << "Ââåä³òü íîìåð çàë³êîâî¿ êíèæêè: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð»Ñ–ÐºÐ¾Ð²Ð¾Ñ— ÐºÐ½Ð¸Ð¶ÐºÐ¸: ";
 		cin >> it.gradebook_id; cin.get();
-		cout << "Ââåä³òü îö³íêó: ";
+		cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¾Ñ†Ñ–Ð½ÐºÑƒ: ";
 		cin >> it.mark; cin.get();
 		v->push_back(it);
-		cout << endl << "Äîäàòè ùå çàïèñ [1/0]: ";
+		cout << endl << "Ð”Ð¾Ð´Ð°Ñ‚Ð¸ Ñ‰Ðµ Ð·Ð°Ð¿Ð¸Ñ [1/0]: ";
 		int fg;  cin >> fg;
 		if (fg != 1) break;
 	} return v;
@@ -39,7 +39,7 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	//çàäà÷à 3
+	//Ð·Ð°Ð´Ð°Ñ‡Ð° 3
 	auto f3 = GetItems();
 	PrintAll(*f3);
 	WriteItems("./data.txt", *f3);

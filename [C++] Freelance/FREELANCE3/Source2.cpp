@@ -26,7 +26,7 @@ Item*ReadFile() {
 	ifstream ifs("data.dat", ios::in);
 	char*buff = new char[100];
 	if (!ifs.is_open()){
-	cout<<"Ôàéë íå çíàéäåíî. Öå ìàº áóòè data.dat";_getch();
+	cout<<"Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð·Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾. Ð¦Ðµ Ð¼Ð°Ñ” Ð±ÑƒÑ‚Ð¸ data.dat";_getch();
 	exit(1);
 	}
 	vector<Item> all;
@@ -103,7 +103,7 @@ Item*ReadFile() {
 	}
 	ifs.close();
 	::count = all.size();
-	cout << "Ó ôàéë³ " << ::count << " çàïèñ³â\n";
+	cout << "Ð£ Ñ„Ð°Ð¹Ð»Ñ– " << ::count << " Ð·Ð°Ð¿Ð¸ÑÑ–Ð²\n";
 	Item* allret = new Item[all.size()];
 	for (int i = 0; i < all.size(); i++) {
 		allret[i] = all.at(i);
@@ -112,23 +112,23 @@ Item*ReadFile() {
 void printall(Item*all) {
 	for (int i = 0; i < ::count; i++) {
 		cout << endl <<
-			"\nÊîä ï³äïpèºìñòâà: " << all[i].entertp_code <<
-			"\nÊîä öåõó: " << all[i].shop_code <<
-			"\nÒàáåëüíèé íîìåp ïpàö³âíèêà: " << all[i].empl_num <<
-			"\nÏp³çâèùå ïpàö³âíèêà: " << all[i].empl_surn <<
-			"\nÐ³ê íàpîäæåííÿ: " << all[i].b_date <<
-			"\nÊîä íàö³îíàëüíîñò³: " << all[i].nat_code <<
-			"\nÑ³ìåéíèé ñòàí: " << all[i].maried <<
-			"\nÑòàæ pîáîòè çàãàëüíèé: " << all[i].all_exp <<
-			"\nÑòàæ pîáîòè íåïåpåpâíèé : " << all[i].unnint_exp <<
-			"\nÊîä ïpîôåñ³¿: " << all[i].prof_code <<
-			"\nÐîçpÿä: " << all[i]._class <<
-			"\nÎêëàä : " << all[i].salary << endl;
+			"\nÐšÐ¾Ð´ Ð¿Ñ–Ð´Ð¿pÐ¸Ñ”Ð¼ÑÑ‚Ð²Ð°: " << all[i].entertp_code <<
+			"\nÐšÐ¾Ð´ Ñ†ÐµÑ…Ñƒ: " << all[i].shop_code <<
+			"\nÐ¢Ð°Ð±ÐµÐ»ÑŒÐ½Ð¸Ð¹ Ð½Ð¾Ð¼Ðµp Ð¿pÐ°Ñ†Ñ–Ð²Ð½Ð¸ÐºÐ°: " << all[i].empl_num <<
+			"\nÐŸpÑ–Ð·Ð²Ð¸Ñ‰Ðµ Ð¿pÐ°Ñ†Ñ–Ð²Ð½Ð¸ÐºÐ°: " << all[i].empl_surn <<
+			"\nÐ Ñ–Ðº Ð½Ð°pÐ¾Ð´Ð¶ÐµÐ½Ð½Ñ: " << all[i].b_date <<
+			"\nÐšÐ¾Ð´ Ð½Ð°Ñ†Ñ–Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ñ–: " << all[i].nat_code <<
+			"\nÐ¡Ñ–Ð¼ÐµÐ¹Ð½Ð¸Ð¹ ÑÑ‚Ð°Ð½: " << all[i].maried <<
+			"\nÐ¡Ñ‚Ð°Ð¶ pÐ¾Ð±Ð¾Ñ‚Ð¸ Ð·Ð°Ð³Ð°Ð»ÑŒÐ½Ð¸Ð¹: " << all[i].all_exp <<
+			"\nÐ¡Ñ‚Ð°Ð¶ pÐ¾Ð±Ð¾Ñ‚Ð¸ Ð½ÐµÐ¿ÐµpÐµpÐ²Ð½Ð¸Ð¹ : " << all[i].unnint_exp <<
+			"\nÐšÐ¾Ð´ Ð¿pÐ¾Ñ„ÐµÑÑ–Ñ—: " << all[i].prof_code <<
+			"\nÐ Ð¾Ð·pÑÐ´: " << all[i]._class <<
+			"\nÐžÐºÐ»Ð°Ð´ : " << all[i].salary << endl;
 	}
 }
 void tableHeader() {
-	cout << endl << setw(18) << "|" << setw(28) << "| Çàãàëüíèé ñòàæ |" << " Ïðàö³âíèê³â çà ðîçðÿäàìè |" << endl;
-	cout << "Êîä ï³äïðèºìñòâà |"<<" Êîä öåõó |  ðîáîòè, ðîê³â |"<<"  1 | 2 | 3 | 4 | 5 | 6   |"<<endl;
+	cout << endl << setw(18) << "|" << setw(28) << "| Ð—Ð°Ð³Ð°Ð»ÑŒÐ½Ð¸Ð¹ ÑÑ‚Ð°Ð¶ |" << " ÐŸÑ€Ð°Ñ†Ñ–Ð²Ð½Ð¸ÐºÑ–Ð² Ð·Ð° Ñ€Ð¾Ð·Ñ€ÑÐ´Ð°Ð¼Ð¸ |" << endl;
+	cout << "ÐšÐ¾Ð´ Ð¿Ñ–Ð´Ð¿Ñ€Ð¸Ñ”Ð¼ÑÑ‚Ð²Ð° |"<<" ÐšÐ¾Ð´ Ñ†ÐµÑ…Ñƒ |  Ñ€Ð¾Ð±Ð¾Ñ‚Ð¸, Ñ€Ð¾ÐºÑ–Ð² |"<<"  1 | 2 | 3 | 4 | 5 | 6   |"<<endl;
 }
 void printClass(Item a,int*_class) {
 	cout << setw(10) << a.entertp_code
@@ -174,7 +174,7 @@ void uniteEnterp(vector<Item> all) {
 
 
 	if (CLASSES.size() == 0) {
-		cout << endl << "Íåìàº ï³äïðèºìñòâ ç òàêèìè ïðàö³âíèêàìè" << endl << endl;
+		cout << endl << "ÐÐµÐ¼Ð°Ñ” Ð¿Ñ–Ð´Ð¿Ñ€Ð¸Ñ”Ð¼ÑÑ‚Ð² Ð· Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ñ€Ð°Ñ†Ñ–Ð²Ð½Ð¸ÐºÐ°Ð¼Ð¸" << endl << endl;
 	}
 	else {
 		tableHeader();
@@ -195,13 +195,13 @@ int main() {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	Item*all_items = ReadFile();
-	cout << "Ôàéë óñï³øíî ïðî÷èòàíî!" << endl;
-	cout << "Âèâåñòè âñ³ çàïèñè? 1/0 :";
+	cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿Ñ–ÑˆÐ½Ð¾ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ð½Ð¾!" << endl;
+	cout << "Ð’Ð¸Ð²ÐµÑÑ‚Ð¸ Ð²ÑÑ– Ð·Ð°Ð¿Ð¸ÑÐ¸? 1/0 :";
 	int x; cin >> x; cin.get();
 	if (x ==1) printall(all_items);
 	cout << endl;
 
-	cout << "\n\n\nÄî 20 ðîê³â :";
+	cout << "\n\n\nÐ”Ð¾ 20 Ñ€Ð¾ÐºÑ–Ð² :";
 	vector <Item> sorted;
 
 	for (int i = 0; i < ::count; i++)
@@ -212,7 +212,7 @@ int main() {
 	}
 	uniteEnterp(sorted);
 	sorted.clear();
-	cout << "\n\n\nÂ³ä 20 äî 30 ðîê³â :";
+	cout << "\n\n\nÐ’Ñ–Ð´ 20 Ð´Ð¾ 30 Ñ€Ð¾ÐºÑ–Ð² :";
 	
 	for (int i = 0; i < ::count; i++)
 	{
@@ -223,7 +223,7 @@ int main() {
 	}
 	uniteEnterp(sorted);
 	sorted.clear();
-	cout << "\n\n\nÁ³ëüøå 30 ðîê³â :" ;
+	cout << "\n\n\nÐ‘Ñ–Ð»ÑŒÑˆÐµ 30 Ñ€Ð¾ÐºÑ–Ð² :" ;
 
 	for (int i = 0; i < ::count; i++)
 	{

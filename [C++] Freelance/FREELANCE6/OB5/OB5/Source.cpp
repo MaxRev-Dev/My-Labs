@@ -21,7 +21,7 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		if (a[i] == max)++maxcount;
 	}
-	cout <<"Ìàêñèìàëüíå çíà÷ååíÿ ó "<< maxcount<<" åëåì.";
+	cout <<"ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ðµ Ð·Ð½Ð°Ñ‡ÐµÐµÐ½Ñ Ñƒ "<< maxcount<<" ÐµÐ»ÐµÐ¼.";
 
 
 	_getch();

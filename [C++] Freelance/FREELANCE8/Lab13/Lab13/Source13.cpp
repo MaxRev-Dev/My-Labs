@@ -14,7 +14,7 @@ int main() {
 			cin >> a[i][j];
 		}
 	}
-	cout << "Ìàòğèöà:"<<endl;
+	cout << "ĞœĞ°Ñ‚Ñ€Ğ¸Ñ†Ğ°:"<<endl;
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++) {
 			cout << setw(4)<<a[i][j]<<" ";
@@ -35,9 +35,9 @@ int main() {
 			}
 		}
 	}
-	cout << "Ìàêñèìàëüíûé åëåìåíò ìàòğèöû:"<<endl;
+	cout << "ĞœĞ°ĞºÑĞ¸Ğ¼Ğ°Ğ»ÑŒĞ½Ñ‹Ğ¹ ĞµĞ»ĞµĞ¼ĞµĞ½Ñ‚ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñ‹:"<<endl;
 	cout << "A[" << ximax + 1 << "][" << yimax+1 << "] = " << a[ximax][yimax] << endl;
-	cout << "Ìèíèìàëüíûé åëåìåíò ìàòğèöû:" << endl;
+	cout << "ĞœĞ¸Ğ½Ğ¸Ğ¼Ğ°Ğ»ÑŒĞ½Ñ‹Ğ¹ ĞµĞ»ĞµĞ¼ĞµĞ½Ñ‚ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñ‹:" << endl;
 	cout << "A[" << ximin + 1 << "][" << yimin+1 << "] = " << a[ximin][yimin] << endl;
 
 	_getch();

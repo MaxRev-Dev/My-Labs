@@ -12,26 +12,26 @@ int main() {
 	int N = 100;
 	int *a = new int[N];
 	for (int i = 0; i < N; i++) {
-		a[i] = rand() % 1000000 + 1; // çàïîâíþºìî ðàíäîìíèìè ÷èñëàìè
+		a[i] = rand() % 1000000 + 1; // Ð·Ð°Ð¿Ð¾Ð²Ð½ÑŽÑ”Ð¼Ð¾ Ñ€Ð°Ð½Ð´Ð¾Ð¼Ð½Ð¸Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸
 		cout << a[i] << " ";
 	}cout << endl;
 
 	string *sA = new string[N];
 
-	a[50] = 1000000; // áóäå íàéá³ëüøèì ç óñ³õ
+	a[50] = 1000000; // Ð±ÑƒÐ´Ðµ Ð½Ð°Ð¹Ð±Ñ–Ð»ÑŒÑˆÐ¸Ð¼ Ð· ÑƒÑÑ–Ñ…
 
 	for (int i = 0; i < N; i++) {
 		char buff[20];
-		_itoa_s(a[i], buff, 10); // êîíâåðòóºìî â ñòð³÷êó
+		_itoa_s(a[i], buff, 10); // ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚ÑƒÑ”Ð¼Ð¾ Ð² ÑÑ‚Ñ€Ñ–Ñ‡ÐºÑƒ
 		sA[i] = buff;
 	}
 	int max = MININT, index = -1;
 	for (int i = 0; i < N; i++) {
-		int v = count(sA[i].begin(), sA[i].end(), '0'); //ïîøóê 
+		int v = count(sA[i].begin(), sA[i].end(), '0'); //Ð¿Ð¾ÑˆÑƒÐº 
 		if (v > max) { max = v; index = i; }
 	}
 
-	cout << "\n×èñëî " << sA[index] << " ì³ñòèòü íàéá³ëüøå íóë³â - " << max << endl;
+	cout << "\nÐ§Ð¸ÑÐ»Ð¾ " << sA[index] << " Ð¼Ñ–ÑÑ‚Ð¸Ñ‚ÑŒ Ð½Ð°Ð¹Ð±Ñ–Ð»ÑŒÑˆÐµ Ð½ÑƒÐ»Ñ–Ð² - " << max << endl;
 	_getch();
 	return 0;
 }

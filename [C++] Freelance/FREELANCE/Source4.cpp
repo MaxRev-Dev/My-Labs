@@ -26,12 +26,12 @@ string compare(string str, string str2) {
 int main() {
 	SetConsoleOutputCP(1251);
 	string str1, str2;
-	cout << "Ââåä³òü 1 ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ 1 Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, str1);
-	cout << "Ââåä³òü 2 ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ 2 Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, str2);
 
-	cout << "Íàéäîâøå âõîäæåííÿ 1 ðÿäêà â 2: "<< compare(str1, str2);
+	cout << "ÐÐ°Ð¹Ð´Ð¾Ð²ÑˆÐµ Ð²Ñ…Ð¾Ð´Ð¶ÐµÐ½Ð½Ñ 1 Ñ€ÑÐ´ÐºÐ° Ð² 2: "<< compare(str1, str2);
 
 	_getch();
 	return 0;

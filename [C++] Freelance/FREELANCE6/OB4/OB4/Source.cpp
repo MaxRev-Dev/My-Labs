@@ -10,13 +10,13 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	string str;
-	cout << "Ââåä³òü òåêñò (ÀÁ): ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‚ÐµÐºÑÑ‚ (ÐÐ‘): ";
 	getline(cin, str);
 
-	size_t n1 = count(str.begin(), str.end(), 'À'); // ïðîñòî ôóíêö³ÿ ïîøóêó ç algorithm
-	cout << "Âõîäæåíü À â òåêñò³ - "<<n1;
-	size_t n2 = count(str.begin(), str.end(), 'Á');
-	cout << "\nÂõîäæåíü Á â òåêñò³ - "<<n2<<endl;
+	size_t n1 = count(str.begin(), str.end(), 'Ð'); // Ð¿Ñ€Ð¾ÑÑ‚Ð¾ Ñ„ÑƒÐ½ÐºÑ†Ñ–Ñ Ð¿Ð¾ÑˆÑƒÐºÑƒ Ð· algorithm
+	cout << "Ð’Ñ…Ð¾Ð´Ð¶ÐµÐ½ÑŒ Ð Ð² Ñ‚ÐµÐºÑÑ‚Ñ– - "<<n1;
+	size_t n2 = count(str.begin(), str.end(), 'Ð‘');
+	cout << "\nÐ’Ñ…Ð¾Ð´Ð¶ÐµÐ½ÑŒ Ð‘ Ð² Ñ‚ÐµÐºÑÑ‚Ñ– - "<<n2<<endl;
 	cout << (n1 > n2 ? "TRUE" : "FALSE") << endl;
 	_getch();
 	return 0;

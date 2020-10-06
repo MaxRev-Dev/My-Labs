@@ -20,11 +20,11 @@ struct Item {
 };
 
 void Print(const Item* arr) {
-	cout << endl << "|" << "Ï²Á" << "|" << "Ì³ñöå íàðîäæ."
-		<< "|" << "Òðóäîâèé ñòàæ ç"
-		<< "|" << "Ñòàòü"
-		<< "|" << "Ñ³åéíèé ñòàí"
-		<< "|" << "Îñâ³òà" << endl;
+	cout << endl << "|" << "ÐŸÐ†Ð‘" << "|" << "ÐœÑ–ÑÑ†Ðµ Ð½Ð°Ñ€Ð¾Ð´Ð¶."
+		<< "|" << "Ð¢Ñ€ÑƒÐ´Ð¾Ð²Ð¸Ð¹ ÑÑ‚Ð°Ð¶ Ð·"
+		<< "|" << "Ð¡Ñ‚Ð°Ñ‚ÑŒ"
+		<< "|" << "Ð¡Ñ–ÐµÐ¹Ð½Ð¸Ð¹ ÑÑ‚Ð°Ð½"
+		<< "|" << "ÐžÑÐ²Ñ–Ñ‚Ð°" << endl;
 	for (int i = 0; i < ::size; i++) {
 		auto  item = arr[i];
 		cout << " [" << i + 1 << "] " <<
@@ -71,7 +71,7 @@ Item* GetFromFile(string file) {
 				if (::size < 50)
 					arr[::size++] = item;
 				else {
-					cout << "Ê³ëüê³ñòü çàïèñ³â îáìåæåíî â 50";
+					cout << "ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÑ–Ð² Ð¾Ð±Ð¼ÐµÐ¶ÐµÐ½Ð¾ Ð² 50";
 					break;
 				}
 			}
@@ -82,9 +82,9 @@ Item* GetFromFile(string file) {
 }
 
 void CheckBPlace(const Item* arr){
-	cout << endl << "Ïð³çâèùà òèõ õòî íàðîäèâñÿ â Êèºâ³" << endl;
+	cout << endl << "ÐŸÑ€Ñ–Ð·Ð²Ð¸Ñ‰Ð° Ñ‚Ð¸Ñ… Ñ…Ñ‚Ð¾ Ð½Ð°Ñ€Ð¾Ð´Ð¸Ð²ÑÑ Ð² ÐšÐ¸Ñ”Ð²Ñ–" << endl;
 	for (int i = 0; i < ::size; i++) 
-		if (arr[i].bplace == "Êè¿â") 
+		if (arr[i].bplace == "ÐšÐ¸Ñ—Ð²") 
 			cout << arr[i].name << endl;
 }
 

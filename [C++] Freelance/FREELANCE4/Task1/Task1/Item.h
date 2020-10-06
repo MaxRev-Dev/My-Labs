@@ -31,14 +31,14 @@ struct Item {
 };
 using namespace std;
 void header() {
-	cout << "|" << "Êîä ôàêóëüòåòó"
-		<< "|" << "Êîä ñïåö³àëüíîñò³"
-		<< "|" << "Êóðñ"
-		<< "|" << "Ãðóïà"
-		<< "|" << "Êîä äèñöèïë³íè"
-		<< "|" << "Ïð³çâèùå"
-		<< "|" << "Íîì. ç/ê"
-		<< "|" << "Îö³íêà" << "|" << endl;
+	cout << "|" << "ÐšÐ¾Ð´ Ñ„Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚Ñƒ"
+		<< "|" << "ÐšÐ¾Ð´ ÑÐ¿ÐµÑ†Ñ–Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ñ–"
+		<< "|" << "ÐšÑƒÑ€Ñ"
+		<< "|" << "Ð“Ñ€ÑƒÐ¿Ð°"
+		<< "|" << "ÐšÐ¾Ð´ Ð´Ð¸ÑÑ†Ð¸Ð¿Ð»Ñ–Ð½Ð¸"
+		<< "|" << "ÐŸÑ€Ñ–Ð·Ð²Ð¸Ñ‰Ðµ"
+		<< "|" << "ÐÐ¾Ð¼. Ð·/Ðº"
+		<< "|" << "ÐžÑ†Ñ–Ð½ÐºÐ°" << "|" << endl;
 }
 void PrintAll(const vector<Item> v) {
 	cout << endl;
@@ -108,7 +108,7 @@ vector<Item>* ReadFile(string file) {
 }
 void WriteItems(string file, const vector<Item> v) {
 	ofstream of(file, ios::trunc);
-	cout << endl << "Â³äêðèâàºìî ôàéë äëÿ çàïèñó...";
+	cout << endl << "Ð’Ñ–Ð´ÐºÑ€Ð¸Ð²Ð°Ñ”Ð¼Ð¾ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÑƒ...";
 	for (size_t i = 0; i < v.size(); i++) {
 		auto  p = v[i];
 		of <<
@@ -121,6 +121,6 @@ void WriteItems(string file, const vector<Item> v) {
 			p.gradebook_id << "|" <<
 			p.mark << endl;
 	}
-	cout << endl << "Ôàéë óñï³øíî çáåðåæåíî! " << endl;
+	cout << endl << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿Ñ–ÑˆÐ½Ð¾ Ð·Ð±ÐµÑ€ÐµÐ¶ÐµÐ½Ð¾! " << endl;
 	of.close();
 }

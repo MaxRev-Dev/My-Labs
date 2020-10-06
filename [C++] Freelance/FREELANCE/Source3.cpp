@@ -15,9 +15,9 @@ double square(double num,double x, int step) {
 int main() {
 	SetConsoleOutputCP(1251);
 	int num,n;
-	cout << "Ââåä³òü ÷èñëî: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	cin >> num;
-	cout << "Ââåä³òü êðàòí³ñòü êîðåíÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑ€Ð°Ñ‚Ð½Ñ–ÑÑ‚ÑŒ ÐºÐ¾Ñ€ÐµÐ½Ñ: ";
 	cin >> n;
 	cout << square(num,num, n);
 	_getch();

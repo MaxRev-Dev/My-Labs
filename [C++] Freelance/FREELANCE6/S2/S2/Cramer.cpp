@@ -7,7 +7,7 @@
 
 using namespace std;
 
-/* Метод Крамера*/
+/* РњРµС‚РѕРґ РљСЂР°РјРµСЂР°*/
 double* SolveCramer(SquareMatrix A, double det_A, double *b) {
 	double *ret = new double[A.size];
 	for (int i = 0; i < A.size; ++i) {

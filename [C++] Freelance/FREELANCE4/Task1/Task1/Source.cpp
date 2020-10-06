@@ -65,14 +65,14 @@ bool contains(const vector<int> v, int s) {
 	return false;
 }
 void header() {
-	cout << "|" << " Ó‰ Ù‡ÍÛÎ¸ÚÂÚÛ"
-		<< "|" << " Ó‰ ÒÔÂˆ≥‡Î¸ÌÓÒÚ≥"
-		<< "|" << " ÛÒ"
-		<< "|" << "√ÛÔ‡"
-		<< "|" << " Ó‰ ‰ËÒˆËÔÎ≥ÌË"
-		<< "|" << "œ≥Á‚Ë˘Â"
-		<< "|" << "ÕÓÏ. Á/Í"
-		<< "|" << "Œˆ≥ÌÍ‡" << "|" << endl;
+	cout << "|" << "–ö–æ–¥ —Ñ–∞–∫—É–ª—å—Ç–µ—Ç—É"
+		<< "|" << "–ö–æ–¥ —Å–ø–µ—Ü—ñ–∞–ª—å–Ω–æ—Å—Ç—ñ"
+		<< "|" << "–ö—É—Ä—Å"
+		<< "|" << "–ì—Ä—É–ø–∞"
+		<< "|" << "–ö–æ–¥ –¥–∏—Å—Ü–∏–ø–ª—ñ–Ω–∏"
+		<< "|" << "–ü—Ä—ñ–∑–≤–∏—â–µ"
+		<< "|" << "–ù–æ–º. –∑/–∫"
+		<< "|" << "–û—Ü—ñ–Ω–∫–∞" << "|" << endl;
 }
 void PrintAll(const vector<Item> v) {
 	cout << endl;
@@ -92,13 +92,13 @@ void PrintAll(const vector<Item> v) {
 }
 
 
-//«‡‰‡˜‡ 1
+//–ó–∞–¥–∞—á–∞ 1
 void Calc(vector<Item> v) {
 	vector<int> made;
 	vector<Item> sum, res = v;
 	made.push_back(v.back().fcode);
-	cout << "|\t\t   |   œËÚÓÏ‡ ‚‡„‡   |" << endl;
-	cout << "| ‘‡ÍÛÎ¸ÚÂÚ\t" << "   |  2   3   4   5  |" << endl;
+	cout << "|\t\t   |   –ü–∏—Ç–æ–º–∞ –≤–∞–≥–∞   |" << endl;
+	cout << "| –§–∞–∫—É–ª—å—Ç–µ—Ç\t" << "   |  2   3   4   5  |" << endl;
 	for (size_t i = 0; i < v.size(); i++) {
 		int lsum = 0, cnt = 0, resf;
 		int *wmark = new int[6];
@@ -113,14 +113,14 @@ void Calc(vector<Item> v) {
 				++wmark[v[i].mark];
 			}
 		}
-		cout << "| ‘‡ÍÛÎ¸ÚÂÚ: " << setw(5) << made.back();
+		cout << "| –§–∞–∫—É–ª—å—Ç–µ—Ç: " << setw(5) << made.back();
 		for (int i = 2; i <= 5; i++) {
 			if (wmark[i] != 0) {
 				cout << " | " << setw(1) << setprecision(2) << (1.0*wmark[i] / cnt * 100);
 			}
 			else cout << " | " << 0;
 		}
-		cout << " | —ÂÂ‰Ì≥È ·‡Î: " << lsum / cnt << endl;
+		cout << " | –°–µ—Ä–µ–¥–Ω—ñ–π –±–∞–ª: " << lsum / cnt << endl;
 
 		resf = v.back().fcode;
 		while (contains(made, resf)) {
@@ -136,51 +136,51 @@ void Calc(vector<Item> v) {
 	}
 }
 
-//«‡‰‡˜‡ 2
+//–ó–∞–¥–∞—á–∞ 2
 void RemoveItems(vector<Item> *v) {
 	while (true) {
 		PrintAll(*v);
-		cout << endl << "ÕÓÏÂ Á‡ÔËÒÛ ‰Îˇ ‚Ë‰‡ÎÂÌÌˇ (-1 ‚≥‰Ï≥Ì‡): " << endl;
+		cout << endl << "–ù–æ–º–µ—Ä –∑–∞–ø–∏—Å—É –¥–ª—è –≤–∏–¥–∞–ª–µ–Ω–Ω—è (-1 –≤—ñ–¥–º—ñ–Ω–∞): " << endl;
 		int x; cin >> x; cin.get();
 		if (x == -1) break;
 		v->erase(v->begin() + x - 1);
-		cout << endl << "¬Ë‰‡ÎËÚË ˘Â Á‡ÔËÒ [1/0]: ";
+		cout << endl << "–í–∏–¥–∞–ª–∏—Ç–∏ —â–µ –∑–∞–ø–∏—Å [1/0]: ";
 		int fg;  cin >> fg;
 		if (fg != 1) break;
 	}
 }
 
-//«‡‰‡˜‡ 3
+//–ó–∞–¥–∞—á–∞ 3
 vector<Item>* GetItems() {
 	vector<Item> *v = new vector<Item>();
 	while (true)
 	{
 		Item it;
-		cout << "¬‚Â‰≥Ú¸ ÍÓ‰ Ù‡ÍÛÎ¸ÚÂÚÛ: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –∫–æ–¥ —Ñ–∞–∫—É–ª—å—Ç–µ—Ç—É: ";
 		cin >> it.fcode; cin.get();
-		cout << "¬‚Â‰≥Ú¸ ÍÓ‰ ÒÔÂˆ≥‡Î¸ÌÓÒÚ≥: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –∫–æ–¥ —Å–ø–µ—Ü—ñ–∞–ª—å–Ω–æ—Å—Ç—ñ: ";
 		cin >> it.scode; cin.get();
-		cout << "¬‚Â‰≥Ú¸ ÍÛÒ: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –∫—É—Ä—Å: ";
 		cin >> it.course;
-		cout << "¬‚Â‰≥Ú¸ „ÛÔÛ: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –≥—Ä—É–ø—É: ";
 		cin >> it.group;
-		cout << "¬‚Â‰≥Ú¸ ÍÓ‰ ‰ËÒˆËÔÎ≥ÌË: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –∫–æ–¥ –¥–∏—Å—Ü–∏–ø–ª—ñ–Ω–∏: ";
 		cin >> it.dpcode; cin.get();
-		cout << "¬‚Â‰≥Ú¸ Ô≥Á‚Ë˘Â ÒÚÛ‰ÂÌÚ‡: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –ø—Ä—ñ–∑–≤–∏—â–µ —Å—Ç—É–¥–µ–Ω—Ç–∞: ";
 		cin >> it.nick;
-		cout << "¬‚Â‰≥Ú¸ ÌÓÏÂ Á‡Î≥ÍÓ‚Óø ÍÌËÊÍË: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–º–µ—Ä –∑–∞–ª—ñ–∫–æ–≤–æ—ó –∫–Ω–∏–∂–∫–∏: ";
 		cin >> it.gradebook_id; cin.get();
-		cout << "¬‚Â‰≥Ú¸ Óˆ≥ÌÍÛ: ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –æ—Ü—ñ–Ω–∫—É: ";
 		cin >> it.mark; cin.get();
 		v->push_back(it);
-		cout << endl << "ƒÓ‰‡ÚË ˘Â Á‡ÔËÒ [1/0]: ";
+		cout << endl << "–î–æ–¥–∞—Ç–∏ —â–µ –∑–∞–ø–∏—Å [1/0]: ";
 		int fg;  cin >> fg;
 		if (fg != 1) break;
 	} return v;
 }
 void WriteItems(string file, const vector<Item> v) {
 	ofstream of(file, ios::trunc);
-	cout << endl << "¬≥‰ÍË‚‡∫ÏÓ Ù‡ÈÎ ‰Îˇ Á‡ÔËÒÛ...";
+	cout << endl << "–í—ñ–¥–∫—Ä–∏–≤–∞—î–º–æ —Ñ–∞–π–ª –¥–ª—è –∑–∞–ø–∏—Å—É...";
 	for (size_t i = 0; i < v.size(); i++) {
 		auto  p = v[i];
 		of <<
@@ -193,11 +193,11 @@ void WriteItems(string file, const vector<Item> v) {
 			p.gradebook_id << "|" <<
 			p.mark << endl;
 	}
-	cout << endl << "‘‡ÈÎ ÛÒÔ≥¯ÌÓ Á·ÂÂÊÂÌÓ! " << endl;
+	cout << endl << "–§–∞–π–ª —É—Å–ø—ñ—à–Ω–æ –∑–±–µ—Ä–µ–∂–µ–Ω–æ! " << endl;
 	of.close();
 }
 
-//«‡‰‡˜‡ 4
+//–ó–∞–¥–∞—á–∞ 4
 void CorrectPrint(const Item p) {
 	cout <<
 		"\n| [1]" << setw(5) << p.fcode << setw(5) << "| [2]" << setw(5) <<
@@ -213,67 +213,67 @@ void CorrectItems(vector<Item> *v) {
 	while (true)
 	{
 		PrintAll(*v);
-		cout << "¬‚Â‰≥Ú¸ ÌÓÏÂ Á‡ÔËÒÛ ‰Îˇ ÍÓË„Û‚‡ÌÌˇ (-1 ‚≥‰Ï≥Ì‡): ";
+		cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–º–µ—Ä –∑–∞–ø–∏—Å—É –¥–ª—è –∫–æ—Ä–∏–≥—É–≤–∞–Ω–Ω—è (-1 –≤—ñ–¥–º—ñ–Ω–∞): ";
 		int x, y;  cin >> x; cin.get();
 		if (x == -1) break;
 		Item tmp = v->at(x - 1);
 		while (true)
 		{
-			cout << "¬‚Â‰≥Ú¸ ÌÓÏÂ ÔÓÎˇ ‰Îˇ ÍÓË„Û‚‡ÌÌˇ (-1 ‚≥‰Ï≥Ì‡): ";
+			cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–º–µ—Ä –ø–æ–ª—è –¥–ª—è –∫–æ—Ä–∏–≥—É–≤–∞–Ω–Ω—è (-1 –≤—ñ–¥–º—ñ–Ω–∞): ";
 			CorrectPrint(tmp);
 			cin >> y; cin.get();
 			if (x == -1) break;
-			cout << ">> –Â‰‡„Û∫ÏÓ ";
+			cout << ">> –†–µ–¥–∞–≥—É—î–º–æ ";
 			switch (y)
 			{
 			case 1: {
-				cout << "ÍÓ‰ Ù‡ÍÛÎ¸ÚÂÚÛ: "; cin >> tmp.fcode; cin.get();
+				cout << "–∫–æ–¥ —Ñ–∞–∫—É–ª—å—Ç–µ—Ç—É: "; cin >> tmp.fcode; cin.get();
 				break;
 			}
 			case 2: {
-				cout << "ÍÓ‰ ÒÔÂˆ≥‡Î¸ÌÓÒÚ≥: "; cin >> tmp.scode; cin.get();
+				cout << "–∫–æ–¥ —Å–ø–µ—Ü—ñ–∞–ª—å–Ω–æ—Å—Ç—ñ: "; cin >> tmp.scode; cin.get();
 				break;
 			}
 			case 3: {
-				cout << "ÍÛÒ: "; cin >> tmp.course;
+				cout << "–∫—É—Ä—Å: "; cin >> tmp.course;
 				break;
 			}
 			case 4: {
-				cout << "„ÛÔÛ: "; cin >> tmp.group;
+				cout << "–≥—Ä—É–ø—É: "; cin >> tmp.group;
 				break;
 			}
 			case 5: {
-				cout << "ÍÓ‰ ‰ËÒˆËÔÎ≥ÌË: "; cin >> tmp.dpcode; cin.get();
+				cout << "–∫–æ–¥ –¥–∏—Å—Ü–∏–ø–ª—ñ–Ω–∏: "; cin >> tmp.dpcode; cin.get();
 				break;
 			}
 			case 6: {
-				cout << "Ô≥Á‚Ë˘Â ÒÚÛ‰ÂÌÚ‡: "; cin >> tmp.nick;
+				cout << "–ø—Ä—ñ–∑–≤–∏—â–µ —Å—Ç—É–¥–µ–Ω—Ç–∞: "; cin >> tmp.nick;
 				break;
 			}
 			case 7: {
-				cout << "ÌÓÏÂ Á‡Î.ÍÌ.: "; cin >> tmp.gradebook_id; cin.get();
+				cout << "–Ω–æ–º–µ—Ä –∑–∞–ª.–∫–Ω.: "; cin >> tmp.gradebook_id; cin.get();
 				break;
 			}
 			case 8: {
-				cout << "Óˆ≥ÌÍÛ: "; cin >> tmp.mark; cin.get();
+				cout << "–æ—Ü—ñ–Ω–∫—É: "; cin >> tmp.mark; cin.get();
 				break;
 			}
 			default:
 				break;
 			}
 			CorrectPrint(tmp);
-			cout << endl << "—ÍÓÂ„Û‚‡ÚË ˘Â ÔÓÎÂ [1/0]: ";
+			cout << endl << "–°–∫–æ—Ä–µ–≥—É–≤–∞—Ç–∏ —â–µ –ø–æ–ª–µ [1/0]: ";
 			int fg;  cin >> fg;	if (fg != 1) break;
 
 		}
 
 		v->at(x - 1) = tmp;
-		cout << endl << "—ÍÓÂ„Û‚‡ÚË ˘Â Á‡ÔËÒ [1/0]: ";
+		cout << endl << "–°–∫–æ—Ä–µ–≥—É–≤–∞—Ç–∏ —â–µ –∑–∞–ø–∏—Å [1/0]: ";
 		int fg;  cin >> fg;	if (fg != 1) break;
 	}
 }
 
-//«‡‰‡˜‡ 5
+//–ó–∞–¥–∞—á–∞ 5
 void Min(int**m,int sizeN) {
 	int index;
 	for (int i = 0; i < sizeN; i++) {
@@ -311,26 +311,26 @@ void TestMaxrix() {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//Á‡‰‡˜‡ 1
+	//–∑–∞–¥–∞—á–∞ 1
 	auto f1 = ReadFile("./data.txt");
 	Calc(*f1);
 
-	//Á‡‰‡˜‡ 2
+	//–∑–∞–¥–∞—á–∞ 2
 	auto f2 = ReadFile("./data.txt");
 	RemoveItems(f2);
 	WriteItems("./data.txt", *f2);
 
-	//Á‡‰‡˜‡ 3
+	//–∑–∞–¥–∞—á–∞ 3
 	auto f3 = GetItems();
 	PrintAll(*f3);
 	WriteItems("./data.txt", *f3);
 
-	//Á‡‰‡˜‡ 4
+	//–∑–∞–¥–∞—á–∞ 4
 	auto f4 = ReadFile("./data.txt");
 	CorrectItems(f4);
 	WriteItems("./data.txt", *f4);
 
-	//Á‡‰‡˜‡ 5
+	//–∑–∞–¥–∞—á–∞ 5
 	_getch();
 	return 0;
 }

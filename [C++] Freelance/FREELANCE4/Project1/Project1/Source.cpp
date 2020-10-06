@@ -9,27 +9,27 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int cols,rows;
-	cout << "Введіть кількість стовпців: ";
+	cout << "Р’РІРµРґС–С‚СЊ РєС–Р»СЊРєС–СЃС‚СЊ СЃС‚РѕРІРїС†С–РІ: ";
 	cin >> cols;
-	cout << "Введіть кількість стовпців: ";
+	cout << "Р’РІРµРґС–С‚СЊ РєС–Р»СЊРєС–СЃС‚СЊ СЃС‚РѕРІРїС†С–РІ: ";
 	cin >> rows;
 	int**m = new int*[cols+1];
-	//ввід матриці
+	//РІРІС–Рґ РјР°С‚СЂРёС†С–
 	for (int i = 0; i < cols; i++) {
 		m[i] = new int[rows+1];
 		for (int j = 0; j < rows; j++) {
-			cout << "Введіть A["<<i+1<<"]["<<j+1<<"]: ";
+			cout << "Р’РІРµРґС–С‚СЊ A["<<i+1<<"]["<<j+1<<"]: ";
 			cin >> m[i][j];
 		}
 	}
-	//вивід
-	cout << endl<<"Ваша матриця"<<endl;
+	//РІРёРІС–Рґ
+	cout << endl<<"Р’Р°С€Р° РјР°С‚СЂРёС†СЏ"<<endl;
 	for (int i = 0; i < cols; i++) {
 		for (int j = 0; j < rows; j++) {
 			cout << m[i][j] << " ";
 		}cout << endl;
 	}
-	//пошук максимальних елементів
+	//РїРѕС€СѓРє РјР°РєСЃРёРјР°Р»СЊРЅРёС… РµР»РµРјРµРЅС‚С–РІ
 	vector<int> maxline;
 	for (int i = 0; i < cols; i++) {
 		int rowMax = MININT,colsMax=MININT;
@@ -46,18 +46,18 @@ int main() {
 		maxline.push_back(colsMax);
 	}
 
-	//рахуємо суму
+	//СЂР°С…СѓС”РјРѕ СЃСѓРјСѓ
 	int sum = 0;
 	for (size_t i = 0; i < maxline.size(); i++) {
 		sum += maxline[i];
 	}
-	cout <<"Сума дорівнює " << sum<<endl;
-	//запис суми у діагональ
+	cout <<"РЎСѓРјР° РґРѕСЂС–РІРЅСЋС” " << sum<<endl;
+	//Р·Р°РїРёСЃ СЃСѓРјРё Сѓ РґС–Р°РіРѕРЅР°Р»СЊ
 	for (int i = 0; i < cols; i++) {
 		m[i][i] = sum;
 	}
-	//вивід
-	cout <<endl<<"Перетворена матриця"<<endl;
+	//РІРёРІС–Рґ
+	cout <<endl<<"РџРµСЂРµС‚РІРѕСЂРµРЅР° РјР°С‚СЂРёС†СЏ"<<endl;
 	for (int i = 0; i < cols; i++) {
 		for (int j = 0; j < rows; j++) {
 			cout << m[i][j] << " ";

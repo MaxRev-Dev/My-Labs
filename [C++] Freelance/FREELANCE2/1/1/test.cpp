@@ -7,9 +7,9 @@ using namespace std;
 int main() {
 	SetConsoleOutputCP(1251);
 	string str1, str2;
-	cout << "Ââåä³òü 1 ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ 1 Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, str1);
-	cout << "Ââåä³òü 2 ðÿäîê: ";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ 2 Ñ€ÑÐ´Ð¾Ðº: ";
 	getline(cin, str2);
 
 

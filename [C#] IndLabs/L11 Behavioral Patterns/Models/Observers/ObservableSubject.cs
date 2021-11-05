@@ -21,14 +21,14 @@ namespace L11_Behavioral_Patterns.Models.Observers
         {
             foreach (var observer in _observers)
             {
-                Console.WriteLine($"{GetType().Name}Subject: Detached an {observer.GetType().Name}.");
+                Console.WriteLine($"{GetType().Name}Subject: Detached {observer.GetType().Name}.");
             }
             _observers.Clear();
         }
         public void Detach(IObserver observer)
         {
             _observers.Remove(observer);
-            Console.WriteLine($"{GetType().Name}Subject: Detached an {observer.GetType().Name}.");
+            Console.WriteLine($"{GetType().Name}Subject: Detached {observer.GetType().Name}.");
         }
 
         public void Notify()

@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{42D2C449-743D-4555-AE82-917AF6EE1C98}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L8_Regex</RootNamespace>
+    <RootNamespace>L10_Stuctural_Patterns</RootNamespace>
     <TargetFramework>net5.0</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyTitle>L8 Regex</AssemblyTitle>
-    <Product>L8 Regex</Product>
+    <AssemblyTitle>L10 Stuctural Patterns</AssemblyTitle>
+    <Product>L10 Stuctural Patterns</Product>
     <Copyright>Copyright ©  2018</Copyright>
   </PropertyGroup>
   <ItemGroup>

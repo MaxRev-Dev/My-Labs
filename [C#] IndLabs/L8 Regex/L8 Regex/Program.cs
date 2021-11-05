@@ -6,8 +6,7 @@ using System.Text.RegularExpressions;
 namespace L8_Regex
 {
     class Program
-    {
-        static object obj = new object();
+    { 
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;

@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{42D2C449-743D-4555-AE82-917AF6EE1C98}</ProjectGuid>
+    <ProjectGuid>{ADF9317A-FA23-4852-99C8-6874CA8A87F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L8_Regex</RootNamespace>
-    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>L9_Creational_Patterns</RootNamespace>
+    <TargetFramework>net461</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyTitle>L8 Regex</AssemblyTitle>
-    <Product>L8 Regex</Product>
+    <AssemblyTitle>L9 Creational Patterns</AssemblyTitle>
+    <Product>L9 Creational Patterns</Product>
     <Copyright>Copyright ©  2018</Copyright>
   </PropertyGroup>
   <ItemGroup>

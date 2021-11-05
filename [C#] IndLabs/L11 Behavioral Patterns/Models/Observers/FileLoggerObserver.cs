@@ -15,7 +15,7 @@ namespace L11_Behavioral_Patterns.Models.Observers
 
         public FileLoggerObserver(string fileName)
         {
-            _fs = File.Open(fileName, FileMode.Create, FileAccess.Write);
+            _fs = File.Open(fileName, File.Exists(fileName) ? FileMode.Truncate : FileMode.CreateNew, FileAccess.Write);
             _writer = new StreamWriter(_fs, Encoding.UTF8);
         }
 

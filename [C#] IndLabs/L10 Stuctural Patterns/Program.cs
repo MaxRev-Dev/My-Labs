@@ -19,15 +19,13 @@ namespace L10_Stuctural_Patterns
 
             worker.Drive(car, GearboxPosition.Forward);
             worker.Drive(trainAdapter, GearboxPosition.Forward);
-
-            Console.ReadKey();
         }
     }
     class Worker
     {
-        public void Drive(IVehicle car, GearboxPosition direction)
+        public void Drive(IVehicle vehicle, GearboxPosition direction)
         {
-            car.Drive(direction);
+            vehicle.Drive(direction);
         }
     }
 }

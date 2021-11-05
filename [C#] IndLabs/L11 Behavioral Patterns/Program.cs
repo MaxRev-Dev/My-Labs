@@ -39,15 +39,13 @@ namespace L11_Behavioral_Patterns
             
             car.DetachAll();
             train.DetachAll();
-
-            Console.ReadKey();
         }
     }
     class Worker
     {
-        public void Drive(IVehicle car, GearboxPosition direction)
+        public void Drive(IVehicle vehicle, GearboxPosition direction)
         {
-            car.Drive(direction);
+            vehicle.Drive(direction);
         }
     }
 }
